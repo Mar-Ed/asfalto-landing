@@ -1,89 +1,145 @@
-import Link from "next/link"
+"use client"
+
+import { useEffect, useRef } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Play } from "lucide-react"
+import { ArrowRight } from "lucide-react"
+import gsap from "gsap"
+import { ScrollTrigger } from "gsap/ScrollTrigger"
+
+if (typeof window !== "undefined") {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 export function Hero() {
+  const containerRef = useRef<HTMLDivElement>(null)
+  const imageRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      // 1. Initial Reveal - UX/UI Engineer Style
+      const tl = gsap.timeline({ defaults: { ease: "expo.out" } })
+
+      tl.from(".reveal-text", {
+        y: "110%",
+        opacity: 0,
+        duration: 1.5,
+        stagger: 0.1,
+      })
+      .from(".fade-in", {
+        opacity: 0,
+        y: 20,
+        duration: 1,
+        stagger: 0.2,
+      }, "-=1")
+      .from(imageRef.current, {
+        scale: 1.25,
+        opacity: 0,
+        duration: 2.5,
+        ease: "expo.inOut",
+      }, "-=2")
+
+      // 2. Subtle Cinematic Movement (Non-blocking)
+      // Just a very light image movement that doesn't feel like pinning
+      gsap.to(imageRef.current, {
+        scrollTrigger: {
+          trigger: containerRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1, // Add lag for more fluid feel
+        },
+        y: 80,
+        ease: "none"
+      })
+    }, containerRef)
+
+    return () => ctx.revert()
+  }, [])
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 lg:pt-20">
-      {/* Background with overlay */}
-      <div className="absolute inset-0 bg-background">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-          style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=2070&auto=format&fit=crop')`,
-          }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background" />
-      </div>
+    <section 
+      ref={containerRef}
+      className="relative min-h-screen lg:h-screen flex flex-col bg-background overflow-hidden"
+    >
+      <div className="flex-1 flex flex-col lg:flex-row">
+        {/* Left Content */}
+        <div className="flex-1 flex items-center px-6 lg:px-24 pt-28 lg:pt-16">
+          <div className="max-w-3xl hero-content space-y-10 py-12 lg:py-0">
+            {/* Header / Eyebrow */}
+            <div className="space-y-6 overflow-hidden">
+              <div className="fade-in flex items-center gap-4">
+                <div className="w-12 h-[2px] bg-primary" />
+                <span className="text-primary font-bold tracking-[0.3em] text-[10px] sm:text-xs">
+                  EXPERIENCIA Y COMPROMISO A TUS SERVICIOS
+                </span>
+              </div>
 
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 lg:px-8 py-20 lg:py-32">
-        <div className="max-w-4xl mx-auto text-center">
-          {/* Eyebrow */}
-          <p className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary text-muted-foreground text-sm font-medium mb-8">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            Certificados por Normas Técnicas MTC
-          </p>
-
-          {/* Main Heading - SEO H1 */}
-          <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight text-foreground mb-6 text-balance">
-            Ingeniería en Asfalto:{" "}
-            <span className="text-primary">Infraestructura de Alta Resistencia</span>
-          </h1>
-
-          {/* Subtitle */}
-          <p className="text-lg sm:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed text-pretty">
-            Especialistas en Mezclas Asfálticas RC-250, Emulsiones Catiónicas y 
-            Pavimentación Integral en Lima. Calidad que construye el futuro.
-          </p>
-
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button
-              asChild
-              size="lg"
-              className="bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-6 text-base font-semibold"
-            >
-              <Link href="#contacto">
-                Cotización Inmediata
-                <ArrowRight className="ml-2 w-5 h-5" />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="border-border text-foreground hover:bg-secondary px-8 py-6 text-base"
-            >
-              <Link href="#servicios">
-                <Play className="mr-2 w-5 h-5" />
-                Ver Proyectos
-              </Link>
-            </Button>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-border max-w-2xl mx-auto">
-            <div className="text-center">
-              <p className="font-serif text-3xl lg:text-4xl font-semibold text-primary">15+</p>
-              <p className="text-sm text-muted-foreground mt-1">Años de Experiencia</p>
+              {/* Main Heading UX/UI Refined */}
+              <h1 className="flex flex-col text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] leading-[1.1] tracking-tight">
+                <span className="block overflow-hidden">
+                  <span className="reveal-text block font-light text-foreground/90 italic">
+                    Servicio de
+                  </span>
+                </span>
+                <span className="block overflow-hidden">
+                  <span className="reveal-text block font-black text-foreground -mt-1 uppercase tracking-tighter">
+                    PAVIMENTACIÓN <span className="text-primary">&</span>
+                  </span>
+                </span>
+                <span className="block overflow-hidden">
+                  <span className="reveal-text block font-black text-foreground -mt-2 uppercase tracking-tighter">
+                    ASFALTADO EN PERÚ.
+                  </span>
+                </span>
+              </h1>
             </div>
-            <div className="text-center">
-              <p className="font-serif text-3xl lg:text-4xl font-semibold text-primary">500+</p>
-              <p className="text-sm text-muted-foreground mt-1">Proyectos Ejecutados</p>
-            </div>
-            <div className="text-center">
-              <p className="font-serif text-3xl lg:text-4xl font-semibold text-primary">100%</p>
-              <p className="text-sm text-muted-foreground mt-1">Garantía de Calidad</p>
+            
+            <div className="space-y-8 fade-in">
+              <p className="text-muted-foreground text-lg md:text-xl max-w-lg leading-relaxed font-medium">
+                Infraestructura vial de <span className="text-foreground">alta resistencia</span> ejecutada por ingenieros especialistas en Lima. 
+                Garantizamos durabilidad extrema en cada capa asfáltica.
+              </p>
+
+              <div className="flex flex-wrap gap-6">
+                <Button 
+                  size="lg" 
+                  className="group relative overflow-hidden bg-primary text-primary-foreground font-black px-12 py-10 text-lg lg:text-xl rounded-none transition-all duration-500 hover:scale-[1.02] active:scale-[0.98] shadow-2xl shadow-primary/10"
+                >
+                  <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-0 transition-transform duration-500" />
+                  <span className="relative z-10 flex items-center gap-3 tracking-wider">
+                    COTIZAR PROYECTO <ArrowRight className="w-6 h-6 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/50 flex items-start justify-center p-2">
-          <div className="w-1 h-2 rounded-full bg-primary" />
+        {/* Right Image */}
+        <div 
+          className="lg:w-1/2 relative min-h-[400px] sm:min-h-[500px] lg:min-h-full overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-transparent z-10 lg:block hidden" />
+          <div ref={imageRef} className="absolute inset-0">
+            <Image
+              src="/asphalt_workers_premium_1775080184201.png"
+              alt="Ingeniería de asfalto premium"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+          <div className="absolute inset-0 bg-background/30 mix-blend-multiply pointer-events-none" />
+          
+          {/* Subtle UI Overlay Element */}
+          <div className="absolute bottom-12 right-12 z-20 hidden xl:block animate-pulse">
+            <div className="bg-background/40 backdrop-blur-md border border-white/10 p-6 rounded-2xl shadow-2xl">
+              <div className="flex items-center gap-4">
+                <div className="w-3 h-3 rounded-full bg-primary" />
+                <span className="text-white text-xs font-bold tracking-widest uppercase">OBRA EN EJECUCIÓN</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
