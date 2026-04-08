@@ -69,10 +69,10 @@ export function BrandStory() {
               fill
               className="object-cover"
             />
-            {/* Overlay badge */}
+            {/* Overlay badge with Industrial Blue */}
             <div className="absolute bottom-8 left-8 right-8 bg-background/40 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl">
               <div className="flex items-center gap-6">
-                <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shrink-0 shadow-lg shadow-primary/20">
+                <div className="w-16 h-16 rounded-full bg-primary flex items-center justify-center shrink-0 shadow-lg shadow-primary/30">
                   <span className="text-primary-foreground text-2xl font-black">15</span>
                 </div>
                 <div className="space-y-1">
@@ -86,7 +86,7 @@ export function BrandStory() {
           {/* Content */}
           <div className="space-y-10">
             <div className="space-y-6 overflow-hidden">
-              {/* Eyebrow Accent Bar */}
+              {/* Eyebrow Accent Bar - Gold */}
               <div className="story-fade flex items-center gap-4">
                 <div className="w-12 h-[2px] bg-primary" />
                 <span className="text-primary font-bold tracking-[0.3em] text-[10px] sm:text-xs uppercase px-1">
@@ -102,7 +102,7 @@ export function BrandStory() {
                   </span>
                 </span>
                 <span className="block overflow-hidden">
-                  <span className="story-reveal block font-black text-foreground -mt-1 uppercase tracking-tighter">
+                  <span className="story-reveal block font-black text-primary -mt-1 uppercase tracking-tighter">
                     METRO DE ASFALTO
                   </span>
                 </span>
@@ -112,7 +112,7 @@ export function BrandStory() {
             <div className="space-y-8 story-fade">
               <div className="space-y-6">
                 <p className="text-muted-foreground text-lg leading-relaxed font-medium">
-                  Desde hace más de <span className="text-foreground">15 años</span>, nos dedicamos a transformar la infraestructura vial 
+                  Desde hace más de <span className="text-primary font-black">15 años</span>, nos dedicamos a transformar la infraestructura vial 
                   de Lima y el Perú con un rigor técnico inigualable.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
@@ -121,7 +121,7 @@ export function BrandStory() {
                 </p>
               </div>
 
-              {/* Features List with Stagger */}
+              {/* Features List with Blue Icons */}
               <ul className="space-y-4 pt-4 border-t border-border/50">
                 {features.map((feature, index) => (
                   <li key={index} className="flex items-center gap-4 transition-transform hover:translate-x-2 duration-300">

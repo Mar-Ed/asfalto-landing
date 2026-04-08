@@ -41,10 +41,10 @@ export function Footer() {
             <Link href="/" className="flex items-center gap-2 mb-6">
               <Image
                 src="/logo.png"
-                alt="AsfaltosPro Logo"
-                width={64}
-                height={64}
-                className="w-16 h-16 object-contain"
+                alt="AsfaltoPro Logo"
+                width={80}
+                height={80}
+                className="w-20 h-20 object-contain"
               />
             </Link>
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-sm">
@@ -113,7 +113,7 @@ export function Footer() {
         {/* Bottom Footer */}
         <div className="py-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-sm text-muted-foreground">
-            © 2026 AsfaltosPro - Ingeniería que Perdura. Todos los derechos reservados.
+            © 2026 JKO Asfaltos - Calidad en cada kilómetro. Todos los derechos reservados.
           </p>
           <div className="flex items-center gap-4">
             {socialLinks.map((social) => (

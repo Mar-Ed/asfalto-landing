@@ -25,6 +25,12 @@ const asfaltosItems = [
   { label: "Venta De Alquitran", href: "/productos/alquitran" },
 ]
 
+const mantosItems = [
+  { label: "Manto Asfaltico Gravillado", href: "/productos/manto-gravillado" },
+  { label: "Manto Asfaltico Arenado", href: "/productos/manto-arenado" },
+  { label: "Manto Asfaltico Aluminizado", href: "/productos/manto-aluminizado" },
+]
+
 function NavDropdown({ label, items }: { label: string; items: { label: string; href: string }[] }) {
   const [isOpen, setIsOpen] = useState(false)
 
@@ -90,27 +96,27 @@ export function Header() {
   }
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-xl border-b border-border/50">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-xl border-b border-border">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-24">
+        <div className="flex items-center justify-between h-24 lg:h-32">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <div className="relative">
               <Image
                 src="/logo.png"
-                alt="Logo"
-                width={70}
-                height={70}
-                className="w-14 h-14 lg:w-16 lg:h-16 object-contain group-hover:scale-105 transition-transform duration-500"
+                alt="JKO Asfaltos Logo"
+                width={160}
+                height={160}
+                className="w-20 h-20 lg:w-32 lg:h-32 object-contain group-hover:scale-110 transition-all duration-700 drop-shadow-2xl"
                 priority
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg lg:text-xl font-black tracking-tighter leading-none text-foreground">
-                ASFALTO<span className="text-primary italic">PRO</span>
+              <span className="text-lg lg:text-xl font-black tracking-tighter leading-none text-foreground uppercase">
+                <span className="text-primary">JKO</span> ASFALTOS
               </span>
-              <span className="text-[10px] text-muted-foreground uppercase tracking-[0.2em] font-bold">
-                Ingeniería Vial
+              <span className="text-[10px] text-muted-foreground uppercase tracking-[0.1em] font-bold">
+                Calidad en cada kilómetro
               </span>
             </div>
           </Link>
@@ -125,10 +131,7 @@ export function Header() {
             </Link>
             
             <NavDropdown label="Asfaltos" items={asfaltosItems} />
-            
-            <Link href="#mantos" className="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors">
-              Mantos
-            </Link>
+            <NavDropdown label="Mantos" items={mantosItems} />
             <Link href="#anuncios" className="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors">
               Anuncios
             </Link>
@@ -171,7 +174,7 @@ export function Header() {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: "auto" }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden overflow-hidden border-t border-border bg-background pb-8"
+              className="lg:hidden overflow-hidden border-t border-border bg-card pb-8"
             >
               <div className="flex flex-col gap-2 pt-6">
                 <Link
@@ -222,13 +225,37 @@ export function Header() {
                   </AnimatePresence>
                 </div>
 
-                <Link
-                  href="#mantos"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-lg font-bold p-3 hover:bg-secondary rounded-lg transition-colors"
-                >
-                  Mantos
-                </Link>
+                {/* Mobile Mantos Accordion */}
+                <div>
+                  <button 
+                    onClick={() => toggleSection('mantos')}
+                    className="w-full flex items-center justify-between text-lg font-bold p-3 hover:bg-secondary rounded-lg transition-colors"
+                  >
+                    Mantos
+                    <ChevronDown className={cn("w-5 h-5 transition-transform", expandedSection === 'mantos' && "rotate-180")} />
+                  </button>
+                  <AnimatePresence>
+                    {expandedSection === 'mantos' && (
+                      <motion.div 
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: "auto" }}
+                        exit={{ opacity: 0, height: 0 }}
+                        className="pl-6 flex flex-col gap-1 overflow-hidden"
+                      >
+                        {mantosItems.map((item, idx) => (
+                          <Link
+                            key={idx}
+                            href={item.href}
+                            onClick={() => setIsMenuOpen(false)}
+                            className="text-base font-medium py-3 text-muted-foreground hover:text-primary transition-colors"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
                 <Link
                   href="#anuncios"
                   onClick={() => setIsMenuOpen(false)}

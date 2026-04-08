@@ -65,8 +65,16 @@ export function Services() {
   }, [])
 
   return (
-    <section id="servicios" className="py-20 lg:py-32 bg-background overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8">
+    <section 
+      id="servicios" 
+      className="relative py-20 lg:py-32 overflow-hidden bg-fixed bg-cover bg-center"
+      style={{ backgroundImage: "url('/TRABAJANDO_CONSTRUCTORES.jpg')" }}
+    >
+      {/* Dark Overlay for Readability */}
+      <div className="absolute inset-0 bg-black/55 z-0" />
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/20 z-0" />
+
+      <div className="container relative z-10 mx-auto px-4 lg:px-8">
         {/* Header with Animation */}
         <div ref={headerRef} className="text-center max-w-4xl mx-auto mb-20 space-y-8">
           <div className="serv-fade flex items-center justify-center gap-4">
