@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { Facebook, Instagram, Linkedin, Youtube } from "lucide-react"
+import { Facebook, Instagram, Linkedin, Youtube, Mail, MessageCircle } from "lucide-react"
 import Image from "next/image"
 
 const footerLinks = {
@@ -16,7 +16,7 @@ const footerLinks = {
     { label: "PEN 60/70", href: "#productos" },
   ],
   empresa: [
-    { label: "Nosotros", href: "#nosotros" },
+    { label: "Nosotros", href: "/nosotros" },
     { label: "Proyectos", href: "#" },
     { label: "Certificaciones", href: "#" },
     { label: "Contacto", href: "#contacto" },
@@ -24,10 +24,10 @@ const footerLinks = {
 }
 
 const socialLinks = [
+  { icon: Mail, href: "mailto:jecko.company05@gmail.com", label: "Gmail" },
+  { icon: MessageCircle, href: "https://wa.me/51901080254", label: "WhatsApp" },
   { icon: Facebook, href: "#", label: "Facebook" },
   { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Youtube, href: "#", label: "YouTube" },
 ]
 
 export function Footer() {
@@ -52,8 +52,8 @@ export function Footer() {
             </p>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p>Av. Industrial 1234, Chorrillos, Lima</p>
-              <p>RUC: 20123456789</p>
-              <p>+51 999 888 777</p>
+              <p>jecko.company05@gmail.com</p>
+              <p>+51 901 080 254</p>
             </div>
           </div>
 
@@ -93,7 +93,7 @@ export function Footer() {
 
           {/* Empresa */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Empresa</h4>
+            <h4 className="font-semibold text-foreground mb-4">Nosotros</h4>
             <ul className="space-y-3">
               {footerLinks.empresa.map((link) => (
                 <li key={link.label}>

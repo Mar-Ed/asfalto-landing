@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import { usePathname } from "next/navigation"
 import Link from "next/link"
 import { Menu, X, Phone, ChevronDown, MoveRight } from "lucide-react"
 import Image from "next/image"
@@ -33,6 +34,8 @@ const mantosItems = [
 
 function NavDropdown({ label, items }: { label: string; items: { label: string; href: string }[] }) {
   const [isOpen, setIsOpen] = useState(false)
+  const pathname = usePathname()
+  const isAnyActive = items.some(item => pathname === item.href)
 
   return (
     <div 
@@ -43,7 +46,7 @@ function NavDropdown({ label, items }: { label: string; items: { label: string; 
       <button
         className={cn(
           "flex items-center gap-1 text-sm font-bold uppercase tracking-wider transition-colors py-2",
-          isOpen ? "text-primary" : "text-foreground hover:text-primary"
+          (isOpen || isAnyActive) ? "text-primary" : "text-foreground hover:text-primary"
         )}
       >
         {label}
@@ -72,10 +75,16 @@ function NavDropdown({ label, items }: { label: string; items: { label: string; 
                     href={item.href}
                     className="flex items-center justify-between p-3 rounded-lg hover:bg-secondary group/item transition-all"
                   >
-                    <span className="text-sm font-medium text-foreground/90 group-hover/item:text-primary transition-colors">
+                    <span className={cn(
+                      "text-sm font-medium transition-colors",
+                      pathname === item.href ? "text-primary" : "text-foreground/90 group-hover/item:text-primary"
+                    )}>
                       {item.label}
                     </span>
-                    <MoveRight className="w-4 h-4 text-primary opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300" />
+                    <MoveRight className={cn(
+                      "w-4 h-4 text-primary transition-all duration-300",
+                      pathname === item.href ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0"
+                    )} />
                   </Link>
                 ))}
               </div>
@@ -90,6 +99,7 @@ function NavDropdown({ label, items }: { label: string; items: { label: string; 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [expandedSection, setExpandedSection] = useState<string | null>(null)
+  const pathname = usePathname()
 
   const toggleSection = (section: string) => {
     setExpandedSection(expandedSection === section ? null : section)
@@ -123,16 +133,25 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-10">
-            <Link href="/" className="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors">
+            <Link href="/" className={cn(
+              "text-sm font-bold uppercase tracking-wider transition-colors",
+              pathname === "/" ? "text-primary" : "text-foreground hover:text-primary"
+            )}>
               Inicio
             </Link>
-            <Link href="#nosotros" className="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors">
-              Empresa
+            <Link href="/nosotros" className={cn(
+              "text-sm font-bold uppercase tracking-wider transition-colors",
+              pathname === "/nosotros" ? "text-primary" : "text-foreground hover:text-primary"
+            )}>
+              Nosotros
             </Link>
             
             <NavDropdown label="Asfaltos" items={asfaltosItems} />
             <NavDropdown label="Mantos" items={mantosItems} />
-            <Link href="#anuncios" className="text-sm font-bold uppercase tracking-wider hover:text-primary transition-colors">
+            <Link href="/anuncios" className={cn(
+              "text-sm font-bold uppercase tracking-wider transition-colors",
+              pathname === "/anuncios" ? "text-primary" : "text-foreground hover:text-primary"
+            )}>
               Anuncios
             </Link>
           </nav>
@@ -141,11 +160,13 @@ export function Header() {
           <div className="flex items-center gap-6">
             <div className="hidden xl:flex flex-col items-end">
               <a
-                href="tel:+51999888777"
+                href="https://wa.me/51901080254"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm font-bold text-foreground hover:text-primary transition-colors"
               >
                 <Phone className="w-4 h-4 text-primary" />
-                +51 999 888 777
+                +51 901 080 254
               </a>
               <span className="text-[10px] text-muted-foreground uppercase font-medium">Asistencia 24/7</span>
             </div>
@@ -154,7 +175,7 @@ export function Header() {
               asChild
               className="hidden sm:flex rounded-full px-8 bg-primary text-primary-foreground hover:bg-primary/90 font-bold uppercase tracking-wide h-12 shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95"
             >
-              <Link href="#contacto">Contáctanos</Link>
+              <a href="https://wa.me/51901080254" target="_blank" rel="noopener noreferrer">Contáctanos</a>
             </Button>
             
             <button
@@ -180,16 +201,22 @@ export function Header() {
                 <Link
                   href="/"
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-lg font-bold p-3 hover:bg-secondary rounded-lg transition-colors"
+                  className={cn(
+                    "text-lg font-bold p-3 rounded-lg transition-colors",
+                    pathname === "/" ? "text-primary bg-secondary/50" : "hover:bg-secondary"
+                  )}
                 >
                   Inicio
                 </Link>
                 <Link
-                  href="#nosotros"
+                  href="/nosotros"
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-lg font-bold p-3 hover:bg-secondary rounded-lg transition-colors"
+                  className={cn(
+                    "text-lg font-bold p-3 rounded-lg transition-colors",
+                    pathname === "/nosotros" ? "text-primary bg-secondary/50" : "hover:bg-secondary"
+                  )}
                 >
-                  Empresa
+                  Nosotros
                 </Link>
                 
 
@@ -197,7 +224,10 @@ export function Header() {
                 <div>
                   <button 
                     onClick={() => toggleSection('asfaltos')}
-                    className="w-full flex items-center justify-between text-lg font-bold p-3 hover:bg-secondary rounded-lg transition-colors"
+                    className={cn(
+                      "w-full flex items-center justify-between text-lg font-bold p-3 rounded-lg transition-colors",
+                      asfaltosItems.some(i => i.href === pathname) ? "text-primary" : "hover:bg-secondary"
+                    )}
                   >
                     Asfaltos
                     <ChevronDown className={cn("w-5 h-5 transition-transform", expandedSection === 'asfaltos' && "rotate-180")} />
@@ -215,7 +245,10 @@ export function Header() {
                             key={idx}
                             href={item.href}
                             onClick={() => setIsMenuOpen(false)}
-                            className="text-base font-medium py-3 text-muted-foreground hover:text-primary transition-colors"
+                            className={cn(
+                              "text-base font-medium py-3 transition-colors",
+                              pathname === item.href ? "text-primary" : "text-muted-foreground hover:text-primary"
+                            )}
                           >
                             {item.label}
                           </Link>
@@ -229,7 +262,10 @@ export function Header() {
                 <div>
                   <button 
                     onClick={() => toggleSection('mantos')}
-                    className="w-full flex items-center justify-between text-lg font-bold p-3 hover:bg-secondary rounded-lg transition-colors"
+                    className={cn(
+                      "w-full flex items-center justify-between text-lg font-bold p-3 rounded-lg transition-colors",
+                      mantosItems.some(i => i.href === pathname) ? "text-primary" : "hover:bg-secondary"
+                    )}
                   >
                     Mantos
                     <ChevronDown className={cn("w-5 h-5 transition-transform", expandedSection === 'mantos' && "rotate-180")} />
@@ -247,7 +283,10 @@ export function Header() {
                             key={idx}
                             href={item.href}
                             onClick={() => setIsMenuOpen(false)}
-                            className="text-base font-medium py-3 text-muted-foreground hover:text-primary transition-colors"
+                            className={cn(
+                              "text-base font-medium py-3 transition-colors",
+                              pathname === item.href ? "text-primary" : "text-muted-foreground hover:text-primary"
+                            )}
                           >
                             {item.label}
                           </Link>
@@ -256,10 +295,13 @@ export function Header() {
                     )}
                   </AnimatePresence>
                 </div>
-                <Link
-                  href="#anuncios"
+                 <Link
+                  href="/anuncios"
                   onClick={() => setIsMenuOpen(false)}
-                  className="text-lg font-bold p-3 hover:bg-secondary rounded-lg transition-colors"
+                  className={cn(
+                    "text-lg font-bold p-3 rounded-lg transition-colors",
+                    pathname === "/anuncios" ? "text-primary bg-secondary/50" : "hover:bg-secondary"
+                  )}
                 >
                   Anuncios
                 </Link>
@@ -268,9 +310,9 @@ export function Header() {
                   asChild
                   className="w-full mt-6 bg-primary text-primary-foreground hover:bg-primary/90 font-black h-14 rounded-xl shadow-xl shadow-primary/20"
                 >
-                  <Link href="#contacto" onClick={() => setIsMenuOpen(false)}>
+                  <a href="https://wa.me/51901080254" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
                     COTIZACIÓN INMEDIATA
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </motion.nav>

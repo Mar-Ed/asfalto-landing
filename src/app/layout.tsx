@@ -47,6 +47,8 @@ export const metadata: Metadata = {
 
 import { ThemeProvider } from '@/components/providers/theme-provider'
 import { SmoothScroll } from '@/components/providers/smooth-scroll'
+import { Header } from "@/components/layout/header"
+import { Footer } from "@/components/layout/footer"
 
 export default function RootLayout({
   children,
@@ -63,7 +65,11 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <SmoothScroll>
-            {children}
+            <Header />
+            <main className="min-h-screen">
+              {children}
+            </main>
+            <Footer />
             <Analytics />
           </SmoothScroll>
         </ThemeProvider>

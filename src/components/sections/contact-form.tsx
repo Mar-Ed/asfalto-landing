@@ -130,8 +130,8 @@ export function ContactForm() {
             <div className="grid sm:grid-cols-2 gap-8 contact-fade">
               {[
                 { icon: MapPin, title: "Ubicación", detail: "Av. Industrial 1234, Lima" },
-                { icon: Phone, title: "Teléfono", detail: "+51 999 888 777" },
-                { icon: Mail, title: "Email", detail: "contacto@asfaltospro.pe" },
+                { icon: Phone, title: "Teléfono", detail: "+51 901 080 254" },
+                { icon: Mail, title: "Email", detail: "jecko.company05@gmail.com" },
                 { icon: Clock, title: "Atención", detail: "Lun-Vie: 8AM - 6PM" },
               ].map((item, i) => (
                 <div key={i} className="flex flex-col gap-3 group">
