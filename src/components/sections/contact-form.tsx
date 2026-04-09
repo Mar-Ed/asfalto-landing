@@ -3,9 +3,11 @@
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Send, MapPin, Phone, Mail, Clock } from "lucide-react"
+import { Send, MapPin, Phone, Mail, Clock, ChevronDown, MoveRight } from "lucide-react"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { motion, AnimatePresence } from "framer-motion"
+import { cn } from "@/lib/utils"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
@@ -30,6 +32,18 @@ export function ContactForm() {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsDropdownOpen(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside)
+    return () => document.removeEventListener("mousedown", handleClickOutside)
+  }, [])
 
   const sectionRef = useRef<HTMLElement>(null)
   const infoRef = useRef<HTMLDivElement>(null)
@@ -171,10 +185,62 @@ export function ContactForm() {
 
                   <div className="space-y-2">
                     <label className="text-[10px] uppercase font-black tracking-widest text-muted-foreground px-1">Tipo de Proyecto</label>
-                    <select name="tipoObra" required value={formData.tipoObra} onChange={handleChange} className="w-full bg-white/5 border border-white/10 h-12 rounded-xl px-4 text-sm font-bold text-foreground focus:border-primary transition-all appearance-none cursor-pointer">
-                      <option value="" disabled className="bg-background">Seleccionar...</option>
-                      {projectTypes.map(t => <option key={t} value={t} className="bg-background">{t}</option>)}
-                    </select>
+                    <div className="relative" ref={dropdownRef}>
+                      <button
+                        type="button"
+                        onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                        className={cn(
+                          "w-full bg-white/5 border border-white/10 h-12 rounded-xl px-4 text-sm font-bold flex items-center justify-between transition-all",
+                          isDropdownOpen ? "border-primary ring-1 ring-primary/20" : "hover:border-white/20"
+                        )}
+                      >
+                        <span className={cn(formData.tipoObra ? "text-foreground" : "text-muted-foreground")}>
+                          {formData.tipoObra || "Seleccionar..."}
+                        </span>
+                        <motion.div
+                          animate={{ rotate: isDropdownOpen ? 180 : 0 }}
+                          transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                        >
+                          <ChevronDown className="w-4 h-4 text-muted-foreground" />
+                        </motion.div>
+                      </button>
+
+                      <AnimatePresence>
+                        {isDropdownOpen && (
+                          <motion.div
+                            initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                            animate={{ opacity: 1, y: 0, scale: 1 }}
+                            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 30, mass: 0.8 }}
+                            className="absolute bottom-full lg:bottom-auto lg:top-full left-0 w-full z-50 pt-2 pb-2 lg:pt-2"
+                          >
+                            <div className="bg-card border border-border rounded-xl shadow-2xl overflow-hidden backdrop-blur-xl">
+                              <div className="p-2 flex flex-col gap-1 max-h-[240px] overflow-y-auto">
+                                {projectTypes.map((type) => (
+                                  <button
+                                    key={type}
+                                    type="button"
+                                    onClick={() => {
+                                      setFormData(prev => ({ ...prev, tipoObra: type }))
+                                      setIsDropdownOpen(false)
+                                    }}
+                                    className="flex items-center justify-between p-3 rounded-lg hover:bg-secondary group/item transition-all text-left"
+                                  >
+                                    <span className={cn(
+                                      "text-sm font-medium transition-colors",
+                                      formData.tipoObra === type ? "text-primary" : "text-foreground/90 group-hover/item:text-primary"
+                                    )}>
+                                      {type}
+                                    </span>
+                                    <MoveRight className="w-4 h-4 text-primary opacity-0 -translate-x-2 group-hover/item:opacity-100 group-hover/item:translate-x-0 transition-all duration-300" />
+                                  </button>
+                                ))}
+                              </div>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
+                    </div>
                   </div>
 
                   <div className="space-y-2">

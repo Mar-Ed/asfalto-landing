@@ -5,9 +5,9 @@ import Image from "next/image"
 const footerLinks = {
   servicios: [
     { label: "Venta de Asfalto", href: "#servicios" },
-    { label: "Pavimentación", href: "#servicios" },
-    { label: "Bacheo", href: "#servicios" },
-    { label: "Señalización", href: "#servicios" },
+    { label: "Asesoría Técnica", href: "#servicios" },
+    { label: "Control de Calidad", href: "#servicios" },
+    { label: "Logística Profesional", href: "#servicios" },
   ],
   productos: [
     { label: "RC-250", href: "#productos" },
@@ -48,8 +48,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-sm">
-              Especialistas en ingeniería de asfaltos con más de 15 años de experiencia 
-              construyendo la infraestructura vial del Perú.
+              Especialistas en la provisi&oacute;n y log&iacute;stica de asfaltos de alta calidad para proyectos de infraestructura en todo el Per&uacute;.
             </p>
             <div className="space-y-2 text-sm text-muted-foreground">
               <p>Av. Industrial 1234, Chorrillos, Lima</p>

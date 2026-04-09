@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
-import { Fuel, Construction, Truck, ArrowUpRight } from "lucide-react"
+import { Fuel, Construction, Truck, ArrowUpRight, Award } from "lucide-react"
 import Link from "next/link"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
@@ -18,10 +18,10 @@ const services = [
     features: ["Mezclas en caliente", "Mezclas en frío", "RC-250 Premium", "PEN 60/70"],
   },
   {
-    icon: Construction,
-    title: "Ejecución de Obras",
-    description: "Pavimentación de carreteras, bacheo profesional y señalización vial. Proyectos llave en mano.",
-    features: ["Pavimentación vial", "Bacheo profesional", "Señalización", "Mantenimiento"],
+    icon: Award,
+    title: "Control de Calidad",
+    description: "Laboratorio especializado para garantizar que cada despacho cumpla con las especificaciones técnicas requeridas.",
+    features: ["Ensayos de laboratorio", "Certificación MTC", "Control de densidad", "Asesoría técnica"],
   },
   {
     icon: Truck,
@@ -93,14 +93,14 @@ export function Services() {
             </span>
             <span className="block overflow-hidden">
               <span className="serv-reveal block font-black text-foreground -mt-1 uppercase tracking-tighter">
-                INFRAESTRUCTURA VIAL
+                PROVISIÓN DE ASFALTO
               </span>
             </span>
           </h2>
           
           <p className="serv-fade text-muted-foreground text-lg lg:text-xl max-w-2xl mx-auto font-medium leading-relaxed">
-            Ofrecemos un portafolio completo de servicios para cubrir todas las necesidades 
-            de su proyecto de pavimentación.
+            Ofrecemos un portafolio completo de productos para cubrir todas las necesidades 
+            de su proyecto de asfalto.
           </p>
         </div>
 

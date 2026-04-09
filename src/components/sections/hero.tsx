@@ -78,17 +78,17 @@ export function Hero() {
               <h1 className="flex flex-col text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] xl:text-[4.5rem] leading-[1.1] tracking-tight">
                 <span className="block overflow-hidden">
                   <span className="reveal-text block font-light text-foreground/90 italic">
-                    Servicio de
+                    Venta de
                   </span>
                 </span>
                 <span className="block overflow-hidden">
                   <span className="reveal-text block font-black text-foreground -mt-1 uppercase tracking-tighter">
-                    PAVIMENTACIÓN <span className="text-primary">&</span>
+                    ASFALTO DE CALIDAD
                   </span>
                 </span>
                 <span className="block overflow-hidden">
                   <span className="reveal-text block font-black text-foreground -mt-2 uppercase tracking-tighter">
-                    ASFALTADO EN PERÚ.
+                    EN TODO EL PERÚ.
                   </span>
                 </span>
               </h1>
@@ -96,8 +96,8 @@ export function Hero() {
             
             <div className="space-y-8 fade-in">
               <p className="text-muted-foreground text-lg md:text-xl max-w-lg leading-relaxed font-medium">
-                Infraestructura vial de <span className="text-foreground">alta resistencia</span> ejecutada por ingenieros especialistas en Lima. 
-                Garantizamos durabilidad extrema en cada capa asfáltica.
+                Proveedores líderes de <span className="text-foreground">asfalto líquido y mezclas en caliente</span> con certificación de calidad. 
+                Distribución nacional y asesoría técnica especializada.
               </p>
 
               <div className="flex flex-wrap gap-6">
@@ -122,8 +122,8 @@ export function Hero() {
           <div className="absolute inset-0 bg-gradient-to-r from-background via-background/20 to-transparent z-10 lg:block hidden" />
           <div ref={imageRef} className="absolute inset-0">
             <Image
-              src="/asphalt_workers_premium_1775080184201.png"
-              alt="Ingeniería de asfalto premium"
+              src="/asfalto_hero1.png"
+              alt="Venta de asfalto premium"
               fill
               className="object-cover"
               priority
