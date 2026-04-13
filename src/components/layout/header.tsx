@@ -11,11 +11,11 @@ import { cn } from "@/lib/utils"
 
 
 const asfaltosItems = [
-  { label: "Venta De Asfalto RC 250", href: "/productos/asfalto-rc250" },
-  { label: "Venta De Asfalto MC 30", href: "/productos/asfalto-mc30" },
-  { label: "Venta De Asfalto PEN", href: "/productos/asfalto-pen" },
-  { label: "Venta De Asfalto En Frio", href: "/productos/asfalto-frio" },
-  { label: "Venta De Asfalto En Caliente", href: "/productos/asfalto-caliente" },
+  { label: "Venta De Asfalto RC 250", href: "/venta-de-asfalto-rc-250" },
+  { label: "Venta De Asfalto MC 30", href: "/venta-de-asfalto-mc30" },
+  { label: "Venta De Asfalto PEN", href: "/venta-de-asfalto-pen" },
+  { label: "Venta De Asfalto En Frio", href: "/venta-de-asfalto-en-frio" },
+  { label: "Venta De Asfalto En Caliente", href: "/venta-de-asfalto-en-caliente" },
   { label: "Venta De Emulsion Asfaltica Lenta", href: "/productos/emulsion-lenta" },
   { label: "Venta De Emulsion Asfaltica Media", href: "/productos/emulsion-media" },
   { label: "Venta De Emulsion Asfaltica Rapida", href: "/productos/emulsion-rapida" },
@@ -113,7 +113,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-2 group">
             <div className="relative">
               <Image
-                src="/logo.png"
+                src="/logo_oficial.png"
                 alt="JKO Asfaltos Logo"
                 width={160}
                 height={160}

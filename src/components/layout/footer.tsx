@@ -10,10 +10,10 @@ const footerLinks = {
     { label: "Logística Profesional", href: "#servicios" },
   ],
   productos: [
-    { label: "RC-250", href: "#productos" },
-    { label: "Mezcla Asfáltica", href: "#productos" },
+    { label: "RC-250", href: "/venta-de-asfalto-rc-250" },
+    { label: "Mezcla Asfáltica", href: "/venta-de-asfalto-mc30" },
     { label: "Emulsión Catiónica", href: "#productos" },
-    { label: "PEN 60/70", href: "#productos" },
+    { label: "PEN 60/70", href: "/venta-de-asfalto-pen" },
   ],
   empresa: [
     { label: "Nosotros", href: "/nosotros" },
@@ -40,7 +40,7 @@ export function Footer() {
           <div className="sm:col-span-2 lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-6">
               <Image
-                src="/logo.png"
+                src="/logo_oficial.png"
                 alt="AsfaltoPro Logo"
                 width={80}
                 height={80}
