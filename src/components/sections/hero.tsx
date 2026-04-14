@@ -58,6 +58,7 @@ export function Hero() {
 
   return (
     <section 
+      id="hero"
       ref={containerRef}
       className="relative min-h-screen lg:h-screen flex flex-col bg-background overflow-hidden"
     >

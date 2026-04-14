@@ -7,21 +7,13 @@ import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { MessageCircle, CheckCircle2, Droplets, Thermometer, ShieldCheck, Factory, Truck, Droplet, Package, Layers, Waves, HardHat } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ProductCTA, WhatsAppIcon } from "@/components/sections/product-cta"
+import { RelatedProducts } from "@/components/sections/related-products"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
 }
 
-const WhatsAppIcon = ({ className }: { className?: string }) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-)
 
 export default function AsfaltoPENPage() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -57,15 +49,17 @@ export default function AsfaltoPENPage() {
         )
       })
 
-      // Image parallax
-      gsap.to(".parallax-img", {
-        yPercent: 15,
-        ease: "none",
+      // Staggered reveal for info content
+      gsap.from(".info-reveal", {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
         scrollTrigger: {
-          trigger: ".parallax-container",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true
+          trigger: ".info-reveal",
+          start: "top 85%",
+          toggleActions: "play none none none"
         }
       })
     })
@@ -103,18 +97,6 @@ export default function AsfaltoPENPage() {
             <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl mx-auto">
               El Asfalto PEN (60/70 o 85/100) es el ligante hidrocarbonado por excelencia para la construcción de pavimentos que exigen máxima durabilidad y resistencia estructural.
             </p>
-
-            <div className="flex justify-center">
-              <Button
-                asChild
-                className="rounded-full px-10 h-16 bg-primary text-primary-foreground hover:bg-primary/90 font-black uppercase tracking-widest text-xs shadow-2xl shadow-primary/30 transition-all hover:scale-105"
-              >
-                <a href={waUrl} target="_blank" rel="noopener noreferrer">
-                  <WhatsAppIcon className="w-5 h-5 mr-2" />
-                  Solicitar Cotización
-                </a>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -123,23 +105,33 @@ export default function AsfaltoPENPage() {
       <section className="py-20 bg-secondary/10 reveal-section">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="relative aspect-square lg:aspect-video rounded-3xl overflow-hidden shadow-2xl parallax-container">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/20 hover:border-primary transition-all duration-500 group">
               <Image
-                src="/asphalt_workers_premium_1775080184201.png"
-                alt="Infraestructura Vial"
+                src="/asfaltos/asfalto_pen.png"
+                alt="Asfalto PEN"
                 fill
-                className="object-cover transition-transform duration-700 hover:scale-110"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-black uppercase tracking-tight">Potencia Reológica</h2>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                Se denomina "PEN" por el ensayo de penetración que mide su dureza y consistencia técnica. En JKO Asfalto, suministramos un Bitumen con propiedades óptimas, garantizando flexibilidad ante cargas pesadas y temperaturas extremas.
+              <h2 className="text-3xl lg:text-4xl font-black uppercase tracking-tight text-primary info-reveal">VENTA DE ASFALTO PEN 60/70</h2>
+              <p className="text-muted-foreground leading-relaxed text-lg info-reveal">
+                <span className="text-foreground font-bold block mb-2 underline decoration-primary/30 underline-offset-8">Realizamos envíos a todo Lima, Perú.</span>
+                Es un asfalto sólido o semisólido a temperatura ambiente, obtenido mediante el refinado directo de crudos de petróleo seleccionados. Su clasificación 60/70 indica el rango de penetración medido en décimas de milímetro, lo que define su consistencia y dureza técnica.
               </p>
-              <div className="p-6 rounded-2xl bg-card border border-border">
+              <div className="p-6 rounded-2xl bg-card border border-border info-reveal">
                 <p className="text-sm font-medium italic">
-                  "Ideal para resistir las condiciones climáticas de la costa y sierra peruana sin deformaciones."
+                  "Suministramos Cemento Asfáltico PEN 60/70 de alta calidad, garantizando un ligante hidrocarbonado versátil para diversas condiciones climáticas."
                 </p>
+              </div>
+
+              <div className="info-reveal">
+                <ProductCTA 
+                  whatsappUrl={waUrl} 
+                  productName="Asfalto PEN 60/70"
+                  info="Garantizamos la pureza y las propiedades reológicas del PEN 60/70 para asegurar la durabilidad de sus mezclas asfálticas."
+                />
               </div>
             </div>
           </div>
@@ -284,6 +276,8 @@ export default function AsfaltoPENPage() {
           </Button>
         </div>
       </section>
+
+      <RelatedProducts currentProductId={3} />
 
     </div>
   )

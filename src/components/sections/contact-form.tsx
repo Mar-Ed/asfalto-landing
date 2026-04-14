@@ -88,7 +88,34 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    await new Promise(resolve => setTimeout(resolve, 1500))
+
+    // Build a premium corporate WhatsApp message
+    const message = `🏗️  *SOLICITUD DE COTIZACIÓN - JKO ASFALTOS*  🏗️
+_______________________________________
+
+👤  *DATOS DEL CLIENTE:*
+•  *Nombre:* ${formData.nombre}
+•  *Empresa:* ${formData.empresa || 'Particular'}
+•  *Email:* ${formData.email}
+•  *Teléfono:* ${formData.telefono || 'No proporcionado'}
+
+🛠️  *DETALLES DEL PROYECTO:*
+•  *Tipo de Obra:* ${formData.tipoObra || 'Consulta general'}
+
+💬  *REQUERIMIENTO ADICIONAL:*
+"${formData.mensaje || 'Sin comentarios adicionales.'}"
+
+_______________________________________
+💻  *Enviado desde el Portal Web - JKO Asfaltos*`
+
+    const whatsappUrl = `https://wa.me/51901080254?text=${encodeURIComponent(message)}`
+
+    // Simulation delay for UX
+    await new Promise(resolve => setTimeout(resolve, 800))
+    
+    // Open WhatsApp
+    window.open(whatsappUrl, '_blank')
+
     setIsSubmitting(false)
     setIsSubmitted(true)
     setFormData({ nombre: "", empresa: "", email: "", telefono: "", tipoObra: "", mensaje: "" })

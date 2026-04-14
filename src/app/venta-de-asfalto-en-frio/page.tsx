@@ -5,25 +5,16 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { Timer, Snowflake, Package, Truck, Droplets, HardHat, ShieldCheck, CheckCircle2, Factory, ZapOff, Archive, Box, Leaf, Hammer, ClipboardCheck } from "lucide-react"
+import { Timer, Snowflake, Package, Truck, Droplets, HardHat, ShieldCheck, CheckCircle2, Factory, ZapOff, Archive, Box, Leaf, Hammer, ClipboardCheck, Anchor } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ProductCTA, WhatsAppIcon } from "@/components/sections/product-cta"
+import { RelatedProducts } from "@/components/sections/related-products"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
 }
 
-const WhatsAppIcon = ({ className }: { className?: string }) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-)
-
-export default function AsfaltoFrioPage() {
+export default function AsfaltoEnFrioPage() {
   const containerRef = useRef<HTMLDivElement>(null)
   const waUrl = "https://wa.me/51901080254?text=Solicito%20informacion%20del%20productos%20de%20Venta%20de%20Asfalto%20en%20Fr%C3%ADo"
 
@@ -41,31 +32,30 @@ export default function AsfaltoFrioPage() {
       // Section reveals
       const sections = gsap.utils.toArray(".reveal-section")
       sections.forEach((section: any) => {
-        gsap.fromTo(section, 
-          { y: 80, opacity: 0 },
-          {
-            y: 0,
-            opacity: 1,
-            duration: 1,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: section,
-              start: "top 85%",
-              toggleActions: "play none none none"
-            }
+        gsap.from(section, {
+          y: 80,
+          opacity: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 85%",
+            toggleActions: "play none none none"
           }
-        )
+        })
       })
 
-      // Image parallax
-      gsap.to(".parallax-img", {
-        yPercent: 15,
-        ease: "none",
+      // Staggered reveal for info content
+      gsap.from(".info-reveal", {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
         scrollTrigger: {
-          trigger: ".parallax-container",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true
+          trigger: ".info-reveal",
+          start: "top 85%",
+          toggleActions: "play none none none"
         }
       })
     })
@@ -97,24 +87,12 @@ export default function AsfaltoFrioPage() {
             </motion.div>
             
             <h1 className="text-5xl lg:text-7xl font-black uppercase tracking-tighter mb-8 leading-[0.9]">
-              Asfalto <span className="text-primary">en Frío</span>: Alto Rendimiento sin Calor
+              Asfalto en <span className="text-primary">Frío</span>: Eficiencia a Temperatura Ambiente
             </h1>
             
             <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl mx-auto">
-              Mezcla asfáltica pre-elaborada de alto rendimiento. Rehabilitación de superficies en minutos, minimizando el impacto vehicular y optimizando costos.
+              Mezcla asfáltica de alto rendimiento, pre-elaborada con agregados seleccionados y emulsiones modificadas. No requiere calentamiento ni maquinaria pesada.
             </p>
-
-            <div className="flex justify-center">
-              <Button
-                asChild
-                className="rounded-full px-10 h-16 bg-primary text-primary-foreground hover:bg-primary/90 font-black uppercase tracking-widest text-xs shadow-2xl shadow-primary/30 transition-all hover:scale-105"
-              >
-                <a href={waUrl} target="_blank" rel="noopener noreferrer">
-                  <WhatsAppIcon className="w-5 h-5 mr-2" />
-                  Solicitar Cotización
-                </a>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -123,23 +101,33 @@ export default function AsfaltoFrioPage() {
       <section className="py-20 bg-secondary/10 reveal-section">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="relative aspect-square lg:aspect-video rounded-3xl overflow-hidden shadow-2xl parallax-container">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/20 hover:border-primary transition-all duration-500 group">
               <Image
-                src="/TRABAJANDO_aSFALTO.jpg"
-                alt="Reparación con Asfalto en Frío"
+                src="/asfaltos/asfalto_frio.png"
+                alt="Asfalto en Frío JKO Asfalto"
                 fill
-                className="object-cover transition-transform duration-700 hover:scale-110"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-black uppercase tracking-tight">Vanguardia Vial</h2>
-              <p className="text-muted-foreground leading-relaxed text-lg">
-                El Asfalto en Frío de JKO Asfalto es una mezcla de alto rendimiento con agregados seleccionados y emulsiones modificadas. No requiere maquinaria pesada ni calentamiento, permitiendo reparaciones eficientes a temperatura ambiente.
+              <h2 className="text-3xl lg:text-4xl font-black uppercase tracking-tight text-primary info-reveal">VENTA DE ASFALTO EN FRÍO</h2>
+              <p className="text-muted-foreground leading-relaxed text-lg info-reveal">
+                <span className="text-foreground font-bold block mb-2 underline decoration-primary/30 underline-offset-8">Realizamos envíos a todo Lima, Perú.</span>
+                Es la solución definitiva para el mantenimiento vial urbano, ya que permite rehabilitar superficies dañadas en minutos, minimizando el impacto en el flujo vehicular y optimizando los costos operativos de la obra.
               </p>
-              <div className="p-6 rounded-2xl bg-card border border-border">
+              <div className="p-6 rounded-2xl bg-card border border-border info-reveal">
                 <p className="text-sm font-medium italic">
-                  "Solución definitiva para el mantenimiento vial urbano: bacheo en minutos con máxima durabilidad."
+                  "Somos JKO Asfalto, ofrecemos productos de calidad y altamente resistentes, ideales para bacheo inmediato y reparaciones eficientes."
                 </p>
+              </div>
+
+              <div className="info-reveal">
+                <ProductCTA 
+                  whatsappUrl={waUrl} 
+                  productName="Asfalto en Frío"
+                  info="Nuestro asfalto en frío mantiene su consistencia maleable durante el almacenamiento, facilitando su distribución uniforme sobre la superficie."
+                />
               </div>
             </div>
           </div>
@@ -154,12 +142,11 @@ export default function AsfaltoFrioPage() {
             <div className="w-24 h-1 bg-primary mx-auto" />
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-3 gap-8">
             {[
-              { title: "Eco-Eficiencia", desc: "100% ecológico, sin quemadores ni calderas. Menor huella de carbono.", icon: Leaf },
-              { title: "Trabajabilidad", desc: "Consistencia maleable constante, facilitando su distribución uniforme.", icon: Factory },
-              { title: "Anclaje Perfecto", desc: "Agentes químicos que aseguran adherencia total incluso en humedad.", icon: Droplets },
-              { title: "Resistencia Real", desc: "Estabilidad estructural que permite tráfico inmediato tras compactar.", icon: CheckCircle2 }
+              { title: "Eficiencia Energética", desc: "Producto 100% ecológico que elimina quemadores o calderas, reduciendo la huella de carbono.", icon: Leaf },
+              { title: "Trabajabilidad Superior", desc: "Consistencia maleable que facilita la distribución uniforme en cualquier bache.", icon: Hammer },
+              { title: "Adherencia de Alto Grado", desc: "Agentes químicos que aseguran un anclaje perfecto incluso en superficies húmedas.", icon: Anchor }
             ].map((prop, idx) => (
               <div key={idx} className="p-8 rounded-3xl bg-card border border-border hover:border-primary/50 transition-all group">
                 <prop.icon className="w-10 h-10 text-primary mb-6 group-hover:scale-110 transition-transform" />
@@ -171,44 +158,19 @@ export default function AsfaltoFrioPage() {
         </div>
       </section>
 
-      {/* Applications Section */}
+      {/* Applications / Guide Section */}
       <section className="py-20 lg:py-32 bg-foreground text-background reveal-section">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <h2 className="text-4xl lg:text-5xl font-black uppercase tracking-tighter leading-none">
-                Uso <span className="text-primary text-stroke-white">Estratégico</span>
+                ¿Cómo <span className="text-primary text-stroke-white">Aplicarlo?</span>
               </h2>
-              <p className="text-background/70 text-lg">
-                Ideal para proyectos que demandan agilidad y cero interrupción logística:
-              </p>
-              
-              <ul className="space-y-4">
-                {[
-                  "Bacheo y Reparaciones Urgentes (Grietas y hundimientos)",
-                  "Mantenimiento de Redes de Servicios (Agua, gas, fibra)",
-                  "Pavimentación de Áreas Menores y Estacionamientos",
-                  "Obras en Zonas de Difícil Acceso (Sótanos, áreas rurales)",
-                  "Reparación de Veredas y Ciclovías urbanas"
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-4 group">
-                    <div className="mt-1.5 w-6 h-6 rounded-lg bg-primary/20 flex items-center justify-center shrink-0 border border-primary/30">
-                      <div className="w-2 h-2 rounded-sm bg-primary group-hover:rotate-45 transition-transform duration-300" />
-                    </div>
-                    <span className="font-bold text-lg text-background/90 uppercase tracking-tight leading-tight">{item}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl">
-                <h3 className="text-primary font-black uppercase tracking-widest text-sm mb-4 flex items-center gap-2">
-                  <ClipboardCheck className="w-5 h-5" />
-                  Instrucciones de Obra
-                </h3>
-                <ol className="space-y-4 text-sm text-background/70 font-medium">
+              <div className="space-y-6">
+                 <ol className="space-y-4">
                    <li className="flex gap-3">
                      <span className="text-primary font-black">01.</span>
-                     Limpiar el bache eliminando polvo y partes sueltas para asegurar anclaje.
+                     Limpiar la zona dañada retirando material suelto o agua estancada.
                    </li>
                    <li className="flex gap-3">
                      <span className="text-primary font-black">02.</span>
@@ -218,7 +180,7 @@ export default function AsfaltoFrioPage() {
                      <span className="text-primary font-black">03.</span>
                      Compactar firmemente hasta alcanzar una superficie uniforme y estable.
                    </li>
-                </ol>
+                 </ol>
               </div>
             </div>
             
@@ -280,10 +242,10 @@ export default function AsfaltoFrioPage() {
         
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl lg:text-7xl font-black uppercase text-primary-foreground mb-8 tracking-tighter leading-none">
-            La solución definitiva es en frío
+            Reparación vial inmediata
           </h2>
           <p className="text-primary-foreground/80 text-lg lg:text-xl mb-12 max-w-2xl mx-auto font-medium">
-            Optimice sus costos y tiempos de ejecución con nuestra mezcla de alto rendimiento.
+            Despacho express de Asfalto en Frío para bacheo y mantenimiento preventivo.
           </p>
           <Button
             asChild
@@ -297,6 +259,8 @@ export default function AsfaltoFrioPage() {
           </Button>
         </div>
       </section>
+
+      <RelatedProducts currentProductId={4} />
 
     </div>
   )

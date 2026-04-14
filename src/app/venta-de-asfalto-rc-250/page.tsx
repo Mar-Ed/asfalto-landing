@@ -5,26 +5,18 @@ import Image from "next/image"
 import { motion } from "framer-motion"
 import gsap from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { MessageCircle, CheckCircle2, Droplets, Thermometer, ShieldCheck, Factory, Truck, Droplet, Package } from "lucide-react"
+import { Timer, Snowflake, Package, Truck, Droplets, HardHat, ShieldCheck, CheckCircle2, Factory, ZapOff, Archive, Box, Thermometer, ShieldAlert } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { ProductCTA, WhatsAppIcon } from "@/components/sections/product-cta"
+import { RelatedProducts } from "@/components/sections/related-products"
 
 if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger)
 }
 
-const WhatsAppIcon = ({ className }: { className?: string }) => (
-  <svg 
-    viewBox="0 0 24 24" 
-    fill="currentColor" 
-    className={className}
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-)
-
 export default function AsfaltoRC250Page() {
   const containerRef = useRef<HTMLDivElement>(null)
+  const waUrl = "https://wa.me/51901080254?text=Solicito%20informacion%20del%20productos%20de%20Venta%20de%20Asfalto%20l%C3%ADquido%20RC%20250"
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -40,28 +32,33 @@ export default function AsfaltoRC250Page() {
       // Section reveals
       const sections = gsap.utils.toArray(".reveal-section")
       sections.forEach((section: any) => {
-        gsap.from(section, {
-          y: 80,
-          opacity: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 85%",
-            toggleActions: "play none none none"
+        gsap.fromTo(section, 
+          { y: 80, opacity: 0 },
+          {
+            y: 0,
+            opacity: 1,
+            duration: 1,
+            ease: "power3.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 85%",
+              toggleActions: "play none none none"
+            }
           }
-        })
+        )
       })
 
-      // Image parallax
-      gsap.to(".parallax-img", {
-        yPercent: 15,
-        ease: "none",
+      // Staggered reveal for info content
+      gsap.from(".info-reveal", {
+        y: 30,
+        opacity: 0,
+        duration: 1,
+        stagger: 0.2,
+        ease: "power3.out",
         scrollTrigger: {
-          trigger: ".parallax-container",
-          start: "top bottom",
-          end: "bottom top",
-          scrub: true
+          trigger: ".info-reveal",
+          start: "top 85%",
+          toggleActions: "play none none none"
         }
       })
     })
@@ -71,13 +68,13 @@ export default function AsfaltoRC250Page() {
 
   return (
     <div className="bg-background" ref={containerRef}>
-
+      
       {/* Hero Section */}
       <section 
         className="relative pt-32 lg:pt-48 pb-20 lg:pb-32 overflow-hidden bg-fixed bg-cover bg-center"
         style={{ backgroundImage: "url('/fondo_asfalto.png')" }}
       >
-        {/* Dark Overlay for Readability (Matching Servicios Técnicos) */}
+        {/* Dark Overlay for Readability */}
         <div className="absolute inset-0 bg-black/60 z-0" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/30 z-0" />
 
@@ -88,29 +85,17 @@ export default function AsfaltoRC250Page() {
               animate={{ scale: 1, opacity: 1 }}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-black uppercase tracking-widest mb-8"
             >
-              <Droplets className="w-4 h-4" />
-              Solución Bituminosa de Alta Ingeniería
+              <Timer className="w-4 h-4" />
+              Ingeniería de Curado Rápido
             </motion.div>
             
             <h1 className="text-5xl lg:text-7xl font-black uppercase tracking-tighter mb-8 leading-[0.9]">
-              Asfalto Líquido <span className="text-primary">RC-250</span>: Excelencia en Curado Rápido
+              Asfalto <span className="text-primary text-stroke-white">RC-250</span>: Adherencia Inmediata
             </h1>
             
             <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed mb-10 max-w-3xl mx-auto">
-              El Asfalto RC-250 (Rapid Curing) es una solución diseñada para proyectos que exigen una puesta en servicio inmediata. Garantiza una penetración óptima y una adherencia estructural superior.
+              El asfalto líquido de curado rápido estándar en la infraestructura vial peruana. Diseñado para una penetración profunda y una cohesión estructural acelerada.
             </p>
-
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button
-                asChild
-                className="rounded-full px-10 h-16 bg-primary text-primary-foreground hover:bg-primary/90 font-black uppercase tracking-widest text-xs shadow-2xl shadow-primary/30 transition-all hover:scale-105"
-              >
-                <a href="https://wa.me/51901080254?text=Solicito%20informacion%20del%20productos%20de%20Venta%20de%20Asfalto%20l%C3%ADquido%20RC%20250" target="_blank" rel="noopener noreferrer">
-                  <WhatsAppIcon className="w-5 h-5 mr-2" />
-                  Solicitar Cotización
-                </a>
-              </Button>
-            </div>
           </div>
         </div>
       </section>
@@ -119,23 +104,33 @@ export default function AsfaltoRC250Page() {
       <section className="py-20 bg-secondary/10 reveal-section">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="relative aspect-square lg:aspect-video rounded-3xl overflow-hidden shadow-2xl parallax-container">
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/20 hover:border-primary transition-all duration-500 group">
               <Image
-                src="/quality_asphalt_premium_bg.png"
-                alt="Proceso Asfáltico"
+                src="/asfaltos/ASFALTO_250.png"
+                alt="Asfalto Líquido RC-250"
                 fill
-                className="object-cover transition-transform duration-700 hover:scale-110"
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
             <div className="space-y-6">
-              <h2 className="text-3xl lg:text-4xl font-black uppercase tracking-tight">¿Qué es el RC-250?</h2>
-              <p className="text-muted-foreground leading-relaxed text-lg">
+              <h2 className="text-3xl lg:text-4xl font-black uppercase tracking-tight text-primary info-reveal">VENTA DE ASFALTO RC-250</h2>
+              <p className="text-muted-foreground leading-relaxed text-lg info-reveal">
+                <span className="text-foreground font-bold block mb-2 underline decoration-primary/30 underline-offset-8">Realizamos envíos a todo Lima, Perú.</span>
                 Se compone de una base de asfalto de penetración diluida con solventes derivados del petróleo de alta volatilidad, lo que permite una aplicación fluida a temperatura ambiente y un fraguado acelerado.
               </p>
-              <div className="p-6 rounded-2xl bg-card border border-border">
+              <div className="p-6 rounded-2xl bg-card border border-border info-reveal">
                 <p className="text-sm font-medium italic">
-                  "Su nomenclatura '250' hace referencia a su viscosidad cinemática medida a 60°C (144°F), garantizando un desempeño técnico superior."
+                  "Ideal para riegos de imprimación en bases granulares y tratamientos superficiales que requieren una puesta en servicio inmediata."
                 </p>
+              </div>
+
+              <div className="info-reveal">
+                <ProductCTA 
+                  whatsappUrl={waUrl} 
+                  productName="Asfalto RC-250"
+                  info="Suministramos asfalto RC-250 bajo estrictas normas ASTM y MTC, garantizando la viscosidad exacta para su proyecto."
+                />
               </div>
             </div>
           </div>
@@ -152,10 +147,10 @@ export default function AsfaltoRC250Page() {
           
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
-              { title: "Alto Desempeño", desc: "Formulado para resistir las condiciones climáticas más exigentes.", icon: ShieldCheck },
-              { title: "Adherencia Superior", desc: "Crea un vínculo permanente entre las capas de la estructura vial.", icon: CheckCircle2 },
-              { title: "Versatilidad Térmica", desc: "Aplicación eficiente tanto en climas fríos como templados.", icon: Thermometer },
-              { title: "Calidad Certificada", desc: "Cumple con normativas técnicas nacionales e internacionales.", icon: Factory }
+              { title: "Curado Rápido", desc: "Evaporación acelerada de solventes para una cohesión instantánea.", icon: Timer },
+              { title: "Baja Viscosidad", desc: "Fluidez óptima que asegura una penetración profunda en la base.", icon: Droplets },
+              { title: "Alta Pureza", desc: "Residuo asfáltico de alta calidad tras el proceso de fraguado.", icon: ShieldCheck },
+              { title: "Versatilidad", desc: "Efectivo en diversos climas y condiciones de humedad controlada.", icon: Snowflake }
             ].map((prop, idx) => (
               <div key={idx} className="p-8 rounded-3xl bg-card border border-border hover:border-primary/50 transition-all group">
                 <prop.icon className="w-10 h-10 text-primary mb-6 group-hover:scale-110 transition-transform" />
@@ -173,75 +168,63 @@ export default function AsfaltoRC250Page() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <h2 className="text-4xl lg:text-5xl font-black uppercase tracking-tighter leading-none">
-                Aplicaciones <span className="text-primary text-stroke-white">Estratégicas</span>
+                Uso <span className="text-primary text-stroke-white">Estratégico</span>
               </h2>
               <p className="text-background/70 text-lg">
-                El Asfalto RC-250 es el aliado fundamental en la construcción y mantenimiento de infraestructura:
+                La solución técnica para la preparación de superficies de alto rendimiento:
               </p>
               
               <ul className="space-y-4">
                 {[
-                  "Mezclas Asfálticas en Frío (Sitio, cancha o planta)",
-                  "Infraestructura Vial y Rehabilitación",
-                  "Protección de Estructuras y Estabilización de Taludes",
-                  "Tratamientos Superficiales y Morteros Asfálticos",
-                  "Impermeabilización Industrial de alto rendimiento"
+                  "Imprimación de bases granulares antes del pavimentado",
+                  "Tratamientos superficiales simples y múltiples",
+                  "Riegos de liga para la unión de capas asfálticas",
+                  "Estabilización de polvos y suelos arenosos",
+                  "Reparación de grietas y mantenimiento preventivo"
                 ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 group">
-                    <div className="mt-1.5 w-5 h-5 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
-                      <div className="w-2 h-2 rounded-full bg-primary group-hover:scale-150 transition-transform" />
-                    </div>
-                    <span className="font-medium text-lg text-background/90">{item}</span>
+                  <li key={idx} className="flex items-center gap-3">
+                    <div className="w-2 h-2 rounded-full bg-primary shrink-0" />
+                    <span className="font-bold text-lg text-background/90 uppercase tracking-tight">{item}</span>
                   </li>
                 ))}
               </ul>
 
-              <div className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm">
+              <div className="p-8 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl">
                 <div className="flex gap-4 items-center">
-                  <ShieldCheck className="w-8 h-8 text-primary" />
-                  <p className="text-sm">
-                    <strong className="text-primary uppercase tracking-wider block mb-1">Nota Técnica:</strong>
-                    Para asegurar la integridad de la mezcla en frío, el agregado pétreo debe mantener un nivel de humedad inferior al 1.5% antes de su combinación.
+                  <ShieldAlert className="w-8 h-8 text-primary" />
+                  <p className="text-sm text-background/80">
+                    <strong className="text-primary uppercase tracking-widest block mb-1">Nota de Ingeniería:</strong>
+                    Su aplicación debe realizarse con equipo distribuidor de asfalto a presión para asegurar una cobertura milimétrica.
                   </p>
                 </div>
               </div>
             </div>
             
             <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-4">
-                <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl">
-                  <Image src="/TRABAJANDO_aSFALTO.jpg" alt="Obra 1" fill className="object-cover" />
-                </div>
-                <div className="aspect-square relative rounded-2xl overflow-hidden shadow-2xl">
-                  <Image src="/asphalt_workers_premium_1775080184201.png" alt="Obra 2" fill className="object-cover" />
-                </div>
+              <div className="aspect-[3/4] relative rounded-3xl overflow-hidden mt-12 bg-card">
+                <Image src="/logo_oficial.png" alt="JKO Asfalto" fill className="object-contain p-8" />
               </div>
-              <div className="space-y-4 pt-12">
-                <div className="aspect-square relative rounded-2xl overflow-hidden shadow-2xl">
-                  <Image src="/TRABAJANDO_CONSTRUCTORES.jpg" alt="Obra 3" fill className="object-cover" />
-                </div>
-                <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl">
-                  <Image src="/asfalto_hero1.png" alt="Obra 4" fill className="object-cover" />
-                </div>
+              <div className="aspect-[3/4] relative rounded-3xl overflow-hidden bg-muted">
+                <Image src="/quality_asphalt_premium_bg.png" alt="Calidad Premium" fill className="object-cover opacity-60" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Presentations Section */}
+      {/* Presentation Section */}
       <section className="py-20 lg:py-32 reveal-section">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-black uppercase tracking-tighter mb-4">Presentaciones Disponibles</h2>
-            <p className="text-muted-foreground">Mantenemos stock permanente para atender su proyecto.</p>
+            <h2 className="text-4xl lg:text-5xl font-black uppercase tracking-tighter mb-4">Presentaciones</h2>
+            <p className="text-muted-foreground">Abastecimiento flexible para proyectos de cualquier magnitud.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { name: "Cilindro", size: "55 Galones", ideal: "Obras de gran escala", icon: Truck },
-              { name: "Balde", size: "5 Galones", ideal: "Mantenimientos puntuales", icon: Package },
-              { name: "Envase", size: "1 Galón", ideal: "Pruebas de laboratorio", icon: Droplet }
+              { name: "Cilindro", size: "55 Galones", ideal: "Proyectos de pavimentación extensos", icon: Box },
+              { name: "Balde", size: "05 Galones", ideal: "Mantenimiento y bacheo puntual", icon: Package },
+              { name: "Galón", size: "Individual", ideal: "Reparaciones menores y detalles", icon: Truck }
             ].map((p, idx) => (
               <div key={idx} className="flex flex-col items-center p-10 rounded-3xl bg-card border border-border text-center hover:bg-secondary/5 transition-colors group">
                 <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary transition-all">
@@ -265,23 +248,25 @@ export default function AsfaltoRC250Page() {
         
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-4xl lg:text-7xl font-black uppercase text-primary-foreground mb-8 tracking-tighter leading-none">
-            ¿Listo para iniciar tu obra?
+            Potencia la base <br/> de tu proyecto
           </h2>
           <p className="text-primary-foreground/80 text-lg lg:text-xl mb-12 max-w-2xl mx-auto font-medium">
-            Contamos con despacho inmediato en Lima y todo el Perú. Nuestros productos cuentan con garantía total de calidad.
+            Solicite su cotización hoy mismo y garantice la mejor adherencia para su obra vial.
           </p>
           <Button
             asChild
             size="lg"
             className="rounded-full bg-foreground text-background hover:bg-foreground/90 font-black uppercase tracking-widest px-12 h-20 text-lg transition-transform hover:scale-110 shadow-3xl"
           >
-            <a href="https://wa.me/51901080254?text=Solicito%20informacion%20del%20productos%20de%20Venta%20de%20Asfalto%20l%C3%ADquido%20RC%20250" target="_blank" rel="noopener noreferrer">
+             <a href={waUrl} target="_blank" rel="noopener noreferrer">
               <WhatsAppIcon className="w-6 h-6 mr-3" />
               Solicitar Cotización por WhatsApp
             </a>
           </Button>
         </div>
       </section>
+
+      <RelatedProducts currentProductId={1} />
 
     </div>
   )

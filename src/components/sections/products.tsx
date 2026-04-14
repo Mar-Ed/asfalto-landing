@@ -16,49 +16,118 @@ const products = [
     id: 1,
     name: "Asfalto Líquido RC-250",
     category: "Asfaltos Líquidos",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=2032&auto=format&fit=crop",
-    description: "Asfalto de curado rápido ideal para imprimación y tratamientos superficiales.",
-    specs: {
-      "Viscosidad": "250-500 cSt",
-      "Punto inflamación": "> 27°C",
-      "Solvente": "Nafta",
-    },
+    image: "/asfaltos/ASFALTO_250.png",
+    href: "/venta-de-asfalto-rc-250",
+    description: "Curado rápido ideal para imprimación y tratamientos superficiales.",
+    specs: { "Viscosidad": "250-500 cSt", "Punto Inf.": "> 27°C" },
   },
   {
     id: 2,
-    name: "Mezcla Asfáltica Convencional",
-    category: "Mezclas en Caliente",
-    image: "https://images.unsplash.com/photo-1590496793929-36417d3117de?q=80&w=2036&auto=format&fit=crop",
-    description: "Mezcla asfáltica en caliente de alta densidad para carpetas de rodadura.",
-    specs: {
-      "Estabilidad": "> 815 kg",
-      "Flujo": "2-4 mm",
-      "Vacíos": "3-5%",
-    },
+    name: "Asfalto Líquido MC-30",
+    category: "Asfaltos Líquidos",
+    image: "/asfaltos/asfalto_mc30.png",
+    href: "/venta-de-asfalto-mc30",
+    description: "Imprimación técnica de máxima penetración para bases granulares.",
+    specs: { "Penetración": "Alta", "Curado": "Medio" },
   },
   {
     id: 3,
-    name: "Emulsión Catiónica CRS-1",
-    category: "Emulsiones",
-    image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?q=80&w=2069&auto=format&fit=crop",
-    description: "Emulsión de rotura rápida para tratamientos superficiales y riegos de liga.",
-    specs: {
-      "Residuo": "> 60%",
-      "Viscosidad": "20-100 SSF",
-      "Carga": "Catiónica",
-    },
+    name: "Asfalto PEN 60/70",
+    category: "Cementos Asfálticos",
+    image: "/asfaltos/asfalto_pen.png",
+    href: "/venta-de-asfalto-pen",
+    description: "Cemento asfáltico de alta pureza para mezclas de tráfico pesado.",
+    specs: { "Penetración": "60-70 dmm", "Punto Abl.": "> 48°C" },
   },
   {
     id: 4,
-    name: "PEN 60/70",
-    category: "Cementos Asfálticos",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2076&auto=format&fit=crop",
-    description: "Cemento asfáltico de penetración 60-70 para mezclas de alto tráfico.",
-    specs: {
-      "Penetración": "60-70 dmm",
-      "Punto abland.": "> 48°C",
-      "Ductilidad": "> 100 cm",
-    },
+    name: "Asfalto en Frío",
+    category: "Mezclas Especiales",
+    image: "/asfaltos/asfalto_frio.png",
+    href: "/venta-de-asfalto-en-frio",
+    description: "Mezcla pre-elaborada lista para usar sin calentamiento previo.",
+    specs: { "Uso": "Inmediato", "Eco": "100%" },
+  },
+  {
+    id: 5,
+    name: "Asfalto en Caliente",
+    category: "Mezclas en Caliente",
+    image: "/asfaltos/asfalto_caliente.png",
+    href: "/venta-de-asfalto-en-caliente",
+    description: "Mezcla de alta densidad para carpetas de rodadura definitivas.",
+    specs: { "Estabilidad": "> 815 kg", "Flujo": "2-4 mm" },
+  },
+  {
+    id: 6,
+    name: "Emulsión Lenta",
+    category: "Emulsiones",
+    image: "/asfaltos/emulsion_asffaltica_lenta.png",
+    href: "/productos/emulsion-lenta",
+    description: "Rotura controlada para estabilización y sellado profundo.",
+    specs: { "Tipo": "Catiónica", "Uso": "Estabilización" },
+  },
+  {
+    id: 7,
+    name: "Emulsión Media",
+    category: "Emulsiones",
+    image: "/asfaltos/emulsion_asffaltica_media.png",
+    href: "/productos/emulsion-media",
+    description: "Equilibrio perfecto para bacheo profundo y mezclas abiertas.",
+    specs: { "Rotura": "Intermedia", "Cohesión": "Alta" },
+  },
+  {
+    id: 8,
+    name: "Emulsión Rápida",
+    category: "Emulsiones",
+    image: "/asfaltos/emulsion_asffaltica_rapida.png",
+    href: "/productos/emulsion-rapida",
+    description: "Fijación instantánea para riegos de liga y tratamientos superficiales.",
+    specs: { "Rotura": "Instantánea", "Liga": "Superior" },
+  },
+  {
+    id: 9,
+    name: "Brea Sólida",
+    category: "Impermeabilizantes",
+    image: "/asfaltos/brea_solida.png",
+    href: "/productos/brea-solida",
+    description: "Sellado elástico e impenetrable para juntas de dilatación.",
+    specs: { "Estado": "Bloque", "Peso": "14 kg" },
+  },
+  {
+    id: 10,
+    name: "Brea Líquida",
+    category: "Impermeabilizantes",
+    image: "/asfaltos/brea_liquida.png",
+    href: "/productos/brea-liquida",
+    description: "Protección hidrófuga activa aplicable en frío sobre cualquier superficie.",
+    specs: { "Uso": "Directo", "Capas": "Multicapa" },
+  },
+  {
+    id: 11,
+    name: "Teja Asfáltica",
+    category: "Arquitectónicos",
+    image: "/asfaltos/teja_asfaltica.png",
+    href: "/productos/teja-asfaltica",
+    description: "Estética superior con protección de 3mm de asfalto modificado.",
+    specs: { "Espesor": "3 mm", "Pack": "3 m²" },
+  },
+  {
+    id: 12,
+    name: "Bitumen Puro",
+    category: "Ligantes",
+    image: "/asfaltos/venta_bitumen.png",
+    href: "/productos/bitumen",
+    description: "Ligante hidrocarbonado de máxima pureza para mezclas industriales.",
+    specs: { "Pureza": "Máxima", "Uso": "Ligante" },
+  },
+  {
+    id: 13,
+    name: "Alquitrán Refinado",
+    category: "Protección",
+    image: "/asfaltos/venta_alquitran.png",
+    href: "/productos/alquitran",
+    description: "Protector natural de madera y metales contra corrosión y salitre.",
+    specs: { "Acción": "Fungicida", "Sello": "Hidrófugo" },
   },
 ]
 
@@ -73,7 +142,7 @@ export function Products() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // 1. Header Animation (Consistent with Apple Style)
+      // 1. Header Animation
       gsap.timeline({
         scrollTrigger: {
           trigger: headerRef.current,
@@ -87,7 +156,7 @@ export function Products() {
       // 2. Infinite Horizontal Loop
       const scroller = scrollerRef.current
       if (scroller) {
-        const totalWidth = scroller.scrollWidth / 3 // Width of one set
+        const totalWidth = scroller.scrollWidth / 3 
         
         timelineRef.current = gsap.timeline({
           repeat: -1,
@@ -95,7 +164,7 @@ export function Products() {
         })
         .to(scroller, {
           x: -totalWidth,
-          duration: 35, // Adjust speed for premium feel
+          duration: 40, // Increased duration for more items
         })
       }
     })
@@ -105,12 +174,12 @@ export function Products() {
 
   const handleMouseEnter = (id: number | string) => {
     setHoveredId(id)
-    timelineRef.current?.pause() // Pause carousel on hover
+    timelineRef.current?.pause() 
   }
 
   const handleMouseLeave = () => {
     setHoveredId(null)
-    timelineRef.current?.play() // Resume carousel
+    timelineRef.current?.play() 
   }
 
   return (
@@ -145,7 +214,7 @@ export function Products() {
               className="w-[300px] lg:w-[400px] shrink-0 group bg-card/40 backdrop-blur-sm border border-white/5 rounded-2xl overflow-hidden hover:border-primary/50 transition-all duration-500 hover:shadow-3xl hover:shadow-black/40"
             >
               {/* Product Image */}
-              <div className="relative aspect-[16/10] overflow-hidden">
+              <div className="relative aspect-[16/11] overflow-hidden">
                 <Image src={p.image} alt={p.name} fill className="object-cover transition-transform duration-700 group-hover:scale-110" />
                 <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80" />
                 <span className="absolute top-4 left-4 py-1 px-3 bg-primary text-[10px] font-black uppercase tracking-widest text-primary-foreground rounded-full">
@@ -157,7 +226,7 @@ export function Products() {
               <div className="p-8 space-y-6">
                 <div>
                   <h3 className="font-serif text-xl lg:text-2xl font-black text-foreground mb-3 leading-tight tracking-tight">{p.name}</h3>
-                  <p className="text-muted-foreground text-sm font-medium leading-relaxed line-clamp-2">{p.description}</p>
+                  <p className="text-muted-foreground text-sm font-medium leading-relaxed line-clamp-2 h-10">{p.description}</p>
                 </div>
 
                 {/* Quick Specs */}
@@ -176,7 +245,7 @@ export function Products() {
                   asChild
                   className="w-full bg-white/5 border border-white/10 text-white/90 hover:bg-primary hover:text-primary-foreground font-black uppercase tracking-widest text-[10px] h-12 transition-all duration-500 rounded-xl shadow-inner shadow-white/5"
                 >
-                  <Link href="#contacto">Solicitar Cotización</Link>
+                  <Link href={p.href}>Solicitar Cotización</Link>
                 </Button>
               </div>
             </div>

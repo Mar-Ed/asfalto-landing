@@ -58,6 +58,7 @@ export function QualityCommitment() {
 
   return (
     <section 
+      id="certificaciones"
       ref={sectionRef} 
       className="relative py-24 lg:py-40 bg-black overflow-hidden group bg-fixed bg-cover bg-center"
       style={{ backgroundImage: "url('/TRABAJANDO_aSFALTO.jpg')" }}
