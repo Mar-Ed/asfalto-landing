@@ -16,14 +16,16 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Venta de Asfalto RC-250 y Pavimentación en Lima | Especialistas en Infraestructura',
-  description: 'Ingeniería en Asfalto de Alta Resistencia. Especialistas en Mezclas Asfálticas RC-250, Emulsiones Catiónicas y Pavimentación Integral en Lima, Perú. Cumplimiento de Normas Técnicas Peruanas MTC.',
-  keywords: 'asfalto RC-250, pavimentación Lima, mezcla asfáltica, emulsión catiónica, PEN 60/70, infraestructura vial, asfalto Perú',
-  generator: 'v0.app',
+  title: 'JKO Asfaltos | Venta de Asfalto, Brea y Mantos en Perú | Pavimentación en Lima',
+  description: 'JKO Asfaltos: Especialistas en Ingeniería Vial. Venta de Asfalto RC-250, Brea Líquida y Sólida, Mantos Asfálticos y Pavimentación Integral en Lima y todo el Perú. Calidad certificada MTC.',
+  keywords: 'JKO Asfaltos, venta de asfalto en Perú, brea líquida, brea sólida, mantos asfálticos, pavimentación Lima, asfalto RC-250, mezcla asfáltica, infraestructura vial, impermeabilización techos',
+  generator: 'JKO Asfaltos Dashboard',
   openGraph: {
-    title: 'Ingeniería en Asfalto de Alta Resistencia | Lima, Perú',
-    description: 'Especialistas en Mezclas Asfálticas RC-250, Emulsiones y Pavimentación Integral. Calidad certificada según Normas Técnicas Peruanas.',
+    title: 'JKO Asfaltos | Ingeniería y Suministros de Asfalto en Perú',
+    description: 'Venta de asfalto, brea y soluciones de pavimentación con los más altos estándares de calidad (MTC). Atención a nivel nacional.',
     type: 'website',
+    url: 'https://jkoasfaltos.com', // Asumiendo el domino principal
+    siteName: 'JKO Asfaltos',
     locale: 'es_PE',
   },
   icons: {

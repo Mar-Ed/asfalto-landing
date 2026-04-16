@@ -27,9 +27,9 @@ const asfaltosItems = [
 ]
 
 const mantosItems = [
-  { label: "Manto Asfaltico Gravillado", href: "/productos/manto-gravillado" },
-  { label: "Manto Asfaltico Arenado", href: "/productos/manto-arenado" },
-  { label: "Manto Asfaltico Aluminizado", href: "/productos/manto-aluminizado" },
+  { label: "Manto Asfaltico Gravillado", href: "/productos/manto-asfaltico-gravillado" },
+  { label: "Manto Asfaltico Arenado", href: "/productos/manto-asfaltico-arenado" },
+  { label: "Manto Asfaltico Aluminizado", href: "/productos/manto-asfaltico-aluminizado" },
 ]
 
 function NavDropdown({ label, items }: { label: string; items: { label: string; href: string }[] }) {

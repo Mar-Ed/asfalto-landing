@@ -138,24 +138,45 @@ export default function TejaAsfalticaPage() {
       </section>
 
       {/* Properties Section */}
-      <section className="py-20 lg:py-32 reveal-section">
-        <div className="container mx-auto px-4 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl lg:text-5xl font-black uppercase tracking-tighter mb-4">Propiedades Técnicas</h2>
-            <div className="w-24 h-1 bg-primary mx-auto" />
+      <section 
+        className="relative py-24 lg:py-40 overflow-hidden bg-fixed bg-cover bg-center"
+        style={{ backgroundImage: "url('/asfaltos/FONDOS_ASFALTOS/FONDO_TEJA_ASFALTICA.png')" }}
+      >
+        {/* Overlays matching Servicios Técnicos style for maximum image visibility */}
+        <div className="absolute inset-0 bg-black/30 z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20 z-0" />
+
+        <div className="container relative z-10 mx-auto px-4 lg:px-8 reveal-section">
+          <div className="text-center mb-16 space-y-4">
+            <div className="flex items-center justify-center gap-4 mb-2">
+              <div className="w-12 h-[2px] bg-primary" />
+              <span className="text-primary text-[10px] uppercase font-black tracking-[0.4em]">Especificaciones</span>
+              <div className="w-12 h-[2px] bg-primary" />
+            </div>
+            <h2 className="text-4xl lg:text-6xl font-black uppercase tracking-tighter text-white leading-none">
+              Propiedades <span className="text-primary italic">Técnicas</span>
+            </h2>
           </div>
           
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             {[
               { title: "Espesor 3 mm", desc: "Robustez técnica superior garantizando una barrera física consistente contra impactos.", icon: Layers },
               { title: "Multicapa", desc: "Estructura reforzada que evita el desgarro y mantiene la estabilidad dimensional.", icon: ShieldCheck },
               { title: "Termo-Acústico", desc: "Reduce significativamente la transmisión de calor solar y el ruido de lluvias intensas.", icon: Thermometer },
               { title: "Protección UV", desc: "Gránulos cerámicos que reflejan la radiación evitando el envejecimiento prematuro.", icon: Sun }
             ].map((prop, idx) => (
-              <div key={idx} className="p-8 rounded-3xl bg-card border border-border hover:border-primary/50 transition-all group">
-                <prop.icon className="w-10 h-10 text-primary mb-6 group-hover:scale-110 transition-transform" />
-                <h3 className="text-xl font-bold mb-4 uppercase tracking-tight">{prop.title}</h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{prop.desc}</p>
+              <div 
+                key={idx} 
+                className="relative group h-full"
+              >
+                <div className="absolute inset-0 bg-primary/5 rounded-[2.5rem] blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+                <div className="relative h-full p-8 rounded-[2.5rem] bg-[#1A1A1A]/80 border border-white/10 backdrop-blur-md hover:bg-[#222222] transition-all duration-500 hover:scale-[1.02] flex flex-col items-center text-center">
+                  <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
+                    <prop.icon className="w-8 h-8 text-primary group-hover:scale-110 transition-transform" />
+                  </div>
+                  <h3 className="text-lg font-black mb-4 uppercase tracking-tight text-white">{prop.title}</h3>
+                  <p className="text-sm text-white/60 font-medium leading-relaxed">{prop.desc}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -205,10 +226,10 @@ export default function TejaAsfalticaPage() {
             <div className="grid grid-cols-2 gap-4">
                <div className="space-y-4">
                  <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl">
-                   <Image src="/asfaltos/teja_asfaltica.png" alt="Obra Teja 1" fill className="object-cover transition-transform group-hover:scale-110 duration-700" />
+                   <Image src="/TRABAJANDO_aSFALTO.jpg" alt="Obra Asfalto" fill className="object-cover transition-transform group-hover:scale-110 duration-700" />
                  </div>
-                 <div className="aspect-square relative rounded-2xl overflow-hidden border border-primary/30 bg-white/5">
-                    <Image src="/logo_oficial.png" alt="Logo" fill className="object-contain p-8" />
+                 <div className="aspect-square relative rounded-2xl overflow-hidden border border-primary/30">
+                    <Image src="/asfaltos/FONDOS_ASFALTOS/TEJA_FOTO_1.png" alt="Obra Teja" fill className="object-cover" />
                  </div>
                </div>
                <div className="space-y-4 pt-12">
@@ -216,7 +237,7 @@ export default function TejaAsfalticaPage() {
                    <Image src="/asfalto_hero1.png" alt="Obra Teja 2" fill className="object-cover" />
                  </div>
                  <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl border border-primary/20">
-                    <Image src="/quality_asphalt_premium_bg.png" alt="Obra Teja 3" fill className="object-cover" />
+                    <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS5.png" alt="Obra Teja 3" fill className="object-cover" />
                  </div>
                </div>
             </div>

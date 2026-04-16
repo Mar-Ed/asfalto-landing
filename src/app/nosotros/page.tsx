@@ -70,7 +70,7 @@ export default function NosotrosPage() {
               Empresa de Asfalto en Lima Perú
             </span>
             <h1 className="text-5xl lg:text-8xl font-black uppercase tracking-tighter mb-8 text-white drop-shadow-2xl leading-none">
-              ¡¡SOMOS TU <span className="text-primary italic">MEJOR OPCION!!</span>
+              JKO ASFALTOS: <br/> <span className="text-primary italic">INGENIERÍA VIAL</span>
             </h1>
             <div className="w-24 h-2 bg-primary mx-auto rounded-full mb-8"></div>
           </motion.div>
@@ -78,7 +78,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* Presentación Corporativa */}
-      <section className="container mx-auto px-4 py-24 gsap-section">
+      <section className="container mx-auto px-4 py-16 lg:py-24 gsap-section">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           <div className="space-y-8">
             <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-black uppercase tracking-widest">
@@ -134,14 +134,26 @@ export default function NosotrosPage() {
         </div>
       </section>
 
-      {/* Por qué elegirnos */}
-      <section className="bg-secondary/30 py-32 border-y border-white/5 gsap-section">
-        <div className="container mx-auto px-4">
-          <div className="text-center max-w-3xl mx-auto mb-20">
-            <h2 className="text-4xl lg:text-6xl font-black uppercase tracking-tight mb-6 leading-none">
-              Nuestro <span className="text-primary">Diferencial</span>
+      {/* Por qué elegirnos / Nuestro Diferencial */}
+      <section 
+        className="relative py-16 lg:py-24 overflow-hidden bg-fixed bg-cover bg-center"
+        style={{ backgroundImage: "url('/asfalto_aplanadora.png')" }}
+      >
+        {/* Overlays matching EXACTLY the Services Section style */}
+        <div className="absolute inset-0 bg-black/55 z-0" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent z-0" />
+
+        <div className="container relative z-10 mx-auto px-4 gsap-section">
+          <div className="text-center max-w-4xl mx-auto mb-20 space-y-4">
+            <div className="flex items-center justify-center gap-4 mb-2">
+              <div className="w-12 h-[2px] bg-primary" />
+              <span className="text-primary text-[10px] uppercase font-black tracking-[0.4em]">Por qué elegir JKO</span>
+              <div className="w-12 h-[2px] bg-primary" />
+            </div>
+            <h2 className="text-5xl lg:text-7xl font-black uppercase tracking-tighter mb-6 leading-none text-white">
+              Nuestro <span className="text-primary italic">Diferencial</span>
             </h2>
-            <p className="text-xl text-muted-foreground">
+            <p className="text-xl lg:text-2xl text-white/90 font-medium max-w-2xl mx-auto">
               Garantizamos soluciones eficientes y abastecimiento oportuno en cada rincón del Perú.
             </p>
           </div>
@@ -166,7 +178,7 @@ export default function NosotrosPage() {
       </section>
 
       {/* Nuestro Equipo Grid */}
-      <section className="container mx-auto px-4 py-24 gsap-section">
+      <section className="container mx-auto px-4 py-16 lg:py-24 gsap-section">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-xl">
              <Image 
