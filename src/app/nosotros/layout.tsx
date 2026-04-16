@@ -1,8 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Nosotros | JKO Asfaltos | 30 Años de Experiencia en Ingeniería Vial',
-  description: 'Conozca JKO Asfaltos, empresa líder en comercialización y transporte de productos asfálticos en todo el Perú. Más de 30 años garantizando calidad en obras viales.',
+  title: 'Nosotros | JKO Asfaltos | Innovación y Calidad en Ingeniería Vial',
+  description: 'Conozca JKO Asfaltos, una empresa moderna dedicada a la comercialización y transporte de productos asfálticos en todo el Perú. Garantizamos excelencia y tecnología en cada obra.',
   keywords: 'empresa de asfalto Perú, JKO Asfaltos historia, proveedores de asfalto Lima, infraestructura vial Perú',
 }
 

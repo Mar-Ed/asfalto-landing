@@ -45,7 +45,7 @@ export default function NosotrosPage() {
   }, [])
 
   return (
-    <div ref={containerRef} className="bg-background min-h-screen pt-24 lg:pt-32 pb-20">
+    <div ref={containerRef} className="relative bg-background min-h-screen pt-24 lg:pt-32 pb-20">
       
       {/* Hero Section */}
       <section className="relative h-[70vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
@@ -93,13 +93,13 @@ export default function NosotrosPage() {
               </p>
               <div className="space-y-6 text-muted-foreground leading-relaxed text-lg lg:text-xl">
                 <p>
-                  Bajo la dirección de profesionales de gran trayectoria y experiencia, contamos con <strong>más de 30 años</strong> trabajando en el rubro de la construcción de carreteras y vías.
+                  Nacemos con el objetivo de dar solución a las grandes dificultades que se tienen en el sector de la construcción vial, garantizando el correcto y oportuno abastecimiento de insumos asfálticos con un producto avalado y certificado.
                 </p>
                 <p>
-                  Creamos esta empresa con el objetivo de dar solución a las grandes dificultades que se tienen en este sector de la construcción, garantizando el correcto y oportuno abastecimiento de insumos asfálticos con un producto avalado y certificado.
+                  A pesar de ser una empresa joven en el mercado, operamos bajo los más altos estándares de calidad e ingeniería, participando activamente en obras de infraestructura con eficiencia y respondiendo a las exigencias de nuestros clientes y socios estratégicos.
                 </p>
                 <p>
-                  Tenemos la firme convicción que lo que empieza bien termina mejor y el tiempo nos lo confirma con años de experiencia participando progresivamente en múltiples obras y respondiendo con eficiencia a las exigencias de nuestros clientes y socios estratégicos.
+                  Tenemos la firme convicción que lo que empieza bien termina mejor, y nuestra rápida expansión es el resultado de un compromiso inquebrantable con la excelencia y la innovación tecnológica.
                 </p>
               </div>
             </div>
@@ -123,11 +123,11 @@ export default function NosotrosPage() {
             {/* Decals */}
             <div className="absolute -bottom-10 -right-6 lg:-right-10 bg-card p-8 rounded-[2.5rem] border border-white/10 shadow-2xl flex items-center gap-6 backdrop-blur-xl">
               <div className="w-20 h-20 rounded-2xl bg-primary flex items-center justify-center text-primary-foreground transform -rotate-6 group-hover:rotate-0 transition-transform">
-                <Award size={40} />
+                <Target size={40} />
               </div>
               <div>
-                <p className="text-4xl font-black">+30</p>
-                <p className="text-xs text-muted-foreground uppercase font-black tracking-widest leading-none">Años de <br />Experiencia</p>
+                <p className="text-4xl font-black">JKO</p>
+                <p className="text-xs text-muted-foreground uppercase font-black tracking-widest leading-none">Visión de <br />Excelencia</p>
               </div>
             </div>
           </div>
@@ -180,15 +180,7 @@ export default function NosotrosPage() {
       {/* Nuestro Equipo Grid */}
       <section className="container mx-auto px-4 py-16 lg:py-24 gsap-section">
         <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-xl">
-             <Image 
-                src="/TRABAJANDO_CONSTRUCTORES.jpg"
-                alt="Constructores trabajando asfalto"
-                fill
-                className="object-cover hover:scale-105 transition-transform duration-700"
-              />
-          </div>
-          <div className="space-y-6">
+          <div className="space-y-6 lg:order-last">
             <h2 className="text-3xl lg:text-5xl font-black uppercase tracking-tight">
               Un Equipo <span className="text-primary">Especializado</span>
             </h2>
@@ -209,6 +201,15 @@ export default function NosotrosPage() {
               </div>
               <span className="text-sm font-bold uppercase text-muted-foreground">Expertos a tu servicio</span>
             </div>
+          </div>
+
+          <div className="relative aspect-video rounded-3xl overflow-hidden border border-white/10 shadow-xl lg:order-first">
+             <Image 
+                src="/TRABAJANDO_CONSTRUCTORES.jpg"
+                alt="Constructores trabajando asfalto"
+                fill
+                className="object-cover hover:scale-105 transition-transform duration-700"
+              />
           </div>
         </div>
       </section>

@@ -11,9 +11,9 @@ const footerLinks = {
     { label: "Asfalto en Caliente", href: "/venta-de-asfalto-en-caliente" },
   ],
   mantos: [
-    { label: "Manto Gravillado", href: "/productos/manto-gravillado" },
-    { label: "Manto Arenado", href: "/productos/manto-arenado" },
-    { label: "Manto Aluminizado", href: "/productos/manto-aluminizado" },
+    { label: "Manto Gravillado", href: "/productos/manto-asfaltico-gravillado" },
+    { label: "Manto Arenado", href: "/productos/manto-asfaltico-arenado" },
+    { label: "Manto Aluminizado", href: "/productos/manto-asfaltico-aluminizado" },
   ],
   empresa: [
     { label: "Acerca de Nosotros", href: "/nosotros" },

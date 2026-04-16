@@ -68,7 +68,7 @@ export function MantoTemplate({ data }: { data: MantoData }) {
   }, [])
 
   return (
-    <div className="bg-[#0f0f0f] min-h-screen text-foreground" ref={containerRef}>
+    <div className="relative bg-[#0f0f0f] min-h-screen text-foreground" ref={containerRef}>
       
       {/* 1. Technical Hero Section */}
       <section className="relative min-h-[90vh] flex items-center pt-24 pb-12 overflow-hidden bg-[#0a0a0a]">

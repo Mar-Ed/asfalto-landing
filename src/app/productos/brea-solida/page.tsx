@@ -104,16 +104,7 @@ export default function BreaSolidaPage() {
       <section className="py-20 bg-secondary/10 reveal-section">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/20 hover:border-primary transition-all duration-500 group">
-              <Image
-                src="/asfaltos/brea_solida.png"
-                alt="Brea Sólida JKO Asfalto"
-                fill
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-            </div>
-            <div className="space-y-6">
+            <div className="space-y-6 lg:order-last">
               <h2 className="text-3xl lg:text-4xl font-black uppercase tracking-tight text-primary info-reveal">BREA SÓLIDA JKO</h2>
               <p className="text-muted-foreground leading-relaxed text-lg info-reveal">
                 <span className="text-foreground font-bold block mb-2 underline decoration-primary/30 underline-offset-8">Realizamos envíos a todo Lima, Perú.</span>
@@ -132,6 +123,16 @@ export default function BreaSolidaPage() {
                   info="Garantizamos una brea sólida con nula absorción de agua y máxima cohesión, evitando filtraciones en las juntas de concreto de forma definitiva."
                 />
               </div>
+            </div>
+
+            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/20 hover:border-primary transition-all duration-500 group lg:order-first">
+              <Image
+                src="/asfaltos/brea_solida.png"
+                alt="Brea Sólida JKO Asfalto"
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
             </div>
           </div>
         </div>
