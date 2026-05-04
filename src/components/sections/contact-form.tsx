@@ -108,7 +108,7 @@ _______________________________________
 _______________________________________
 💻  *Enviado desde el Portal Web - JKO Asfaltos*`
 
-    const whatsappUrl = `https://wa.me/51901080254?text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/51916764520?text=${encodeURIComponent(message)}`
 
     // Simulation delay for UX
     await new Promise(resolve => setTimeout(resolve, 800))
@@ -157,7 +157,7 @@ _______________________________________
             <div className="grid sm:grid-cols-2 gap-8 contact-fade">
               {[
                 { icon: MapPin, title: "Ubicación", detail: "Av. Industrial 1234, Lima" },
-                { icon: Phone, title: "Teléfono", detail: "+51 901 080 254" },
+                { icon: Phone, title: "Teléfono", detail: "+51 916 764 520" },
                 { icon: Mail, title: "Email", detail: "jecko.company05@gmail.com" },
                 { icon: Clock, title: "Atención", detail: "Lun-Vie: 8AM - 6PM" },
               ].map((item, i) => (

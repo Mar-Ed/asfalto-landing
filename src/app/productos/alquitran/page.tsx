@@ -16,7 +16,7 @@ if (typeof window !== "undefined") {
 
 export default function AlquitranPage() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const waUrl = "https://wa.me/51901080254?text=Solicito%20informacion%20sobre%20el%20Alquitr%C3%A1n%20para%20protecci%C3%B3n%20de%20madera%20y%20estructuras"
+  const waUrl = "https://wa.me/51916764520?text=Solicito%20informacion%20sobre%20el%20Alquitr%C3%A1n%20para%20protecci%C3%B3n%20de%20madera%20y%20estructuras"
 
   useEffect(() => {
     const ctx = gsap.context(() => {

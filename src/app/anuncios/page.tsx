@@ -281,7 +281,7 @@ export default function AnunciosPage() {
                          <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest leading-none">Certificación Calidad JKO</span>
                       </div>
                       <a 
-                        href="https://wa.me/51901080254" 
+                        href="https://wa.me/51916764520" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="bg-primary text-primary-foreground text-center font-black uppercase tracking-widest py-4 rounded-xl hover:bg-white hover:text-black transition-all text-xs shadow-lg shadow-primary/10"

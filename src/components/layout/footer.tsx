@@ -36,8 +36,8 @@ const WhatsAppIcon = ({ className }: { className?: string }) => (
 
 const socialLinks = [
   { icon: Mail, href: "mailto:jecko.company05@gmail.com", label: "Gmail" },
-  { icon: WhatsAppIcon, href: "https://wa.me/51901080254", label: "WhatsApp" },
-  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: WhatsAppIcon, href: "https://wa.me/51916764520", label: "WhatsApp" },
+  { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61589352472968", label: "Facebook" },
   { icon: Instagram, href: "#", label: "Instagram" },
 ]
 
@@ -68,7 +68,7 @@ export function Footer() {
               <span className="hidden sm:block w-[1px] h-3 bg-border" />
               <p>jecko.company05@gmail.com</p>
               <span className="hidden sm:block w-[1px] h-3 bg-border" />
-              <p>+51 901 080 254</p>
+              <p>+51 916 764 520</p>
             </div>
           </div>
 

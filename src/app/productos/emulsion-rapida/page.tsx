@@ -16,7 +16,7 @@ if (typeof window !== "undefined") {
 
 export default function EmulsionRapidaPage() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const waUrl = "https://wa.me/51901080254?text=Solicito%20informacion%20sobre%20la%20Emulsi%C3%B3n%20Asf%C3%A1ltica%20R%C3%A1pida%20para%20riegos%20de%20liga"
+  const waUrl = "https://wa.me/51916764520?text=Solicito%20informacion%20sobre%20la%20Emulsi%C3%B3n%20Asf%C3%A1ltica%20R%C3%A1pida%20para%20riegos%20de%20liga"
 
   useEffect(() => {
     const ctx = gsap.context(() => {

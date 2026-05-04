@@ -16,7 +16,7 @@ if (typeof window !== "undefined") {
 
 export default function EmulsionMediaPage() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const waUrl = "https://wa.me/51901080254?text=Solicito%20informacion%20sobre%20la%20Emulsi%C3%B3n%20Asf%C3%A1ltica%20Media%20para%20mezclas%20y%20bacheo"
+  const waUrl = "https://wa.me/51916764520?text=Solicito%20informacion%20sobre%20la%20Emulsi%C3%B3n%20Asf%C3%A1ltica%20Media%20para%20mezclas%20y%20bacheo"
 
   useEffect(() => {
     const ctx = gsap.context(() => {

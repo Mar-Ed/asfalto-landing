@@ -47,7 +47,7 @@ export interface MantoData {
 export function MantoTemplate({ data }: { data: MantoData }) {
   const containerRef = useRef<HTMLDivElement>(null)
   
-  const waUrl = `https://wa.me/51901080254?text=Solicito%20informaci%C3%B3n%20sobre%20el%20${encodeURIComponent(data.hero.title)}%20${encodeURIComponent(data.hero.highlight)}`
+  const waUrl = `https://wa.me/51916764520?text=Solicito%20informaci%C3%B3n%20sobre%20el%20${encodeURIComponent(data.hero.title)}%20${encodeURIComponent(data.hero.highlight)}`
 
   useEffect(() => {
     const ctx = gsap.context(() => {

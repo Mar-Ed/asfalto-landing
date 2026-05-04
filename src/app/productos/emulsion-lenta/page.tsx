@@ -16,7 +16,7 @@ if (typeof window !== "undefined") {
 
 export default function EmulsionLentaPage() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const waUrl = "https://wa.me/51901080254?text=Solicito%20informacion%20sobre%20la%20Emulsi%C3%B3n%20Asf%C3%A1ltica%20Lenta%20para%20estabilizaci%C3%B3n"
+  const waUrl = "https://wa.me/51916764520?text=Solicito%20informacion%20sobre%20la%20Emulsi%C3%B3n%20Asf%C3%A1ltica%20Lenta%20para%20estabilizaci%C3%B3n"
 
   useEffect(() => {
     const ctx = gsap.context(() => {

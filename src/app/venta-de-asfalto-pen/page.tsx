@@ -17,7 +17,7 @@ if (typeof window !== "undefined") {
 
 export default function AsfaltoPENPage() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const waUrl = "https://wa.me/51901080254?text=Solicito%20informacion%20del%20productos%20de%20Venta%20de%20Asfalto%20PEN%20(Penetraci%C3%B3n)"
+  const waUrl = "https://wa.me/51916764520?text=Solicito%20informacion%20del%20productos%20de%20Venta%20de%20Asfalto%20PEN%20(Penetraci%C3%B3n)"
 
   useEffect(() => {
     const ctx = gsap.context(() => {

@@ -16,7 +16,7 @@ if (typeof window !== "undefined") {
 
 export default function BitumenPage() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const waUrl = "https://wa.me/51901080254?text=Solicito%20informacion%20sobre%20el%20Bitumen%20puro%20para%20proyectos%20industriales"
+  const waUrl = "https://wa.me/51916764520?text=Solicito%20informacion%20sobre%20el%20Bitumen%20puro%20para%20proyectos%20industriales"
 
   useEffect(() => {
     const ctx = gsap.context(() => {

@@ -16,7 +16,7 @@ if (typeof window !== "undefined") {
 
 export default function AsfaltoEnFrioPage() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const waUrl = "https://wa.me/51901080254?text=Solicito%20informacion%20del%20productos%20de%20Venta%20de%20Asfalto%20en%20Fr%C3%ADo"
+  const waUrl = "https://wa.me/51916764520?text=Solicito%20informacion%20del%20productos%20de%20Venta%20de%20Asfalto%20en%20Fr%C3%ADo"
 
   useEffect(() => {
     const ctx = gsap.context(() => {

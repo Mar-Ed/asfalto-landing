@@ -16,7 +16,7 @@ if (typeof window !== "undefined") {
 
 export default function BreaSolidaPage() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const waUrl = "https://wa.me/51901080254?text=Solicito%20informacion%20sobre%20la%20Brea%20S%C3%B3lida%20para%20juntas%20de%20dilataci%C3%B3n"
+  const waUrl = "https://wa.me/51916764520?text=Solicito%20informacion%20sobre%20la%20Brea%20S%C3%B3lida%20para%20juntas%20de%20dilataci%C3%B3n"
 
   useEffect(() => {
     const ctx = gsap.context(() => {

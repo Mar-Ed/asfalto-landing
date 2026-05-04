@@ -160,13 +160,13 @@ export function Header() {
           <div className="flex items-center gap-6">
             <div className="hidden xl:flex flex-col items-end">
               <a
-                href="https://wa.me/51901080254"
+                href="https://wa.me/51916764520"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-sm font-bold text-foreground hover:text-primary transition-colors"
               >
                 <Phone className="w-4 h-4 text-primary" />
-                +51 901 080 254
+                +51 916 764 520
               </a>
               <span className="text-[10px] text-muted-foreground uppercase font-medium">Asistencia 24/7</span>
             </div>
@@ -175,7 +175,7 @@ export function Header() {
               asChild
               className="hidden sm:flex rounded-full px-8 bg-primary text-primary-foreground hover:bg-primary/90 font-bold uppercase tracking-wide h-12 shadow-lg shadow-primary/20 transition-all hover:scale-105 active:scale-95"
             >
-              <a href="https://wa.me/51901080254" target="_blank" rel="noopener noreferrer">Contáctanos</a>
+              <a href="https://wa.me/51916764520" target="_blank" rel="noopener noreferrer">Contáctanos</a>
             </Button>
             
             <button
@@ -310,7 +310,7 @@ export function Header() {
                   asChild
                   className="w-full mt-6 bg-primary text-primary-foreground hover:bg-primary/90 font-black h-14 rounded-xl shadow-xl shadow-primary/20"
                 >
-                  <a href="https://wa.me/51901080254" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
+                  <a href="https://wa.me/51916764520" target="_blank" rel="noopener noreferrer" onClick={() => setIsMenuOpen(false)}>
                     COTIZACIÓN INMEDIATA
                   </a>
                 </Button>

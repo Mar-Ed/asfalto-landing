@@ -16,7 +16,7 @@ if (typeof window !== "undefined") {
 
 export default function TejaAsfalticaPage() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const waUrl = "https://wa.me/51901080254?text=Solicito%20informacion%20sobre%20la%20Teja%20Asf%C3%A1ltica%20de%203mm%20y%20asesor%C3%ADa%20en%20techado"
+  const waUrl = "https://wa.me/51916764520?text=Solicito%20informacion%20sobre%20la%20Teja%20Asf%C3%A1ltica%20de%203mm%20y%20asesor%C3%ADa%20en%20techado"
 
   useEffect(() => {
     const ctx = gsap.context(() => {
