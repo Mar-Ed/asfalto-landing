@@ -106,7 +106,7 @@ export default function EmulsionRapidaPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/20 hover:border-primary transition-all duration-500 group">
               <Image
-                src="/asfaltos/emulsion_asffaltica_rapida.png"
+                src="/asfaltos/emulsion_asffaltica_rapida.webp"
                 alt="Emulsión Asfáltica Rápida"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -227,7 +227,7 @@ export default function EmulsionRapidaPage() {
                   <Image src="/TRABAJANDO_CONSTRUCTORES.jpg" alt="Obra Rápida 1" fill className="object-cover" />
                 </div>
                 <div className="aspect-[3/4] relative rounded-3xl overflow-hidden shadow-2xl mt-12">
-                   <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS2.png" alt="Obra Rápida 2" fill className="object-cover" />
+                   <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS2.webp" alt="Obra Rápida 2" fill className="object-cover" />
                 </div>
               </div>
             </div>

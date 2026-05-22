@@ -11,12 +11,12 @@ const gravilladoData: MantoData = {
     title: "Manto Asfáltico",
     highlight: "Gravillado",
     description: "Diseñado como una solución de ingeniería preelaborada, se consolida como la capa única de impermeabilización definitiva para grandes proyectos y edificaciones civiles.",
-    bgImage: "/fondo_asfalto.png"
+    bgImage: "/fondo_asfalto.webp"
   },
   intro: {
     title: "Protección y Estética",
     text: "Cada rollo es el resultado de un proceso de fabricación multicapa que asegura durabilidad extrema. Está conformado por una capa central de refuerzo de poliéster, capas antiadherentes, una terminación superficial de protección mineral y asfalto impermeabilizante modificado.",
-    image: "/manto_asfalto_gravillado.png",
+    image: "/manto_asfalto_gravillado.webp",
     note: "En JKO Asfalto no solo proveemos el material; garantizamos el éxito con instaladores expertos. Aseguramos una soldadura por termofusión impecable.",
     specs: "Formatos exactos de suministro: Manto asfáltico por rollo de 1m x 10m², con espesores técnicos desde 2.7 mm hasta 4.0 mm, adaptables a su requerimiento."
   },
@@ -39,8 +39,8 @@ const gravilladoData: MantoData = {
       "Infraestructura Pesada: Puentes, viaductos y pavimentaciones."
     ],
     images: [
-      "/mantos/manto_imagen1.png",
-      "/mantos/manto_imagen2.png"
+      "/mantos/manto_imagen1.webp",
+      "/mantos/manto_imagen2.webp"
     ]
   }
 }

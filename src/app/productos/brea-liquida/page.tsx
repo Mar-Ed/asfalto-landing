@@ -127,7 +127,7 @@ export default function BreaLiquidaPage() {
 
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/20 hover:border-primary transition-all duration-500 group lg:order-first">
               <Image
-                src="/asfaltos/brea_liquida.png"
+                src="/asfaltos/brea_liquida.webp"
                 alt="Brea Líquida JKO Asfalto"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -230,15 +230,15 @@ export default function BreaLiquidaPage() {
                    <Image src="/TRABAJANDO_aSFALTO.jpg" alt="Obra Asfalto" fill className="object-cover transition-transform group-hover:scale-110 duration-700" />
                  </div>
                   <div className="aspect-square relative rounded-2xl overflow-hidden border border-primary/30">
-                    <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS2.png" alt="Fondo Industrial" fill className="object-cover" />
+                    <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS2.webp" alt="Fondo Industrial" fill className="object-cover" />
                   </div>
                </div>
                <div className="space-y-4 pt-12">
                  <div className="aspect-square relative rounded-2xl overflow-hidden shadow-2xl border border-primary/20">
-                   <Image src="/asfalto_hero1.png" alt="Obra Brea Líquida 2" fill className="object-cover" />
+                   <Image src="/asfalto_hero1.webp" alt="Obra Brea Líquida 2" fill className="object-cover" />
                  </div>
                   <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl border border-primary/20">
-                    <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS3.png" alt="Obra 3" fill className="object-cover" />
+                    <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS3.webp" alt="Obra 3" fill className="object-cover" />
                   </div>
                </div>
             </div>

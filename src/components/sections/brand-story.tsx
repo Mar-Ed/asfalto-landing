@@ -137,10 +137,13 @@ export function BrandStory() {
             className="relative aspect-[4/3] lg:aspect-square rounded-2xl overflow-hidden shadow-2xl lg:order-first"
           >
             <Image
-              src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS3.png"
-              alt="Equipo de ingeniería trabajando en obra de pavimentación"
+              src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS3.webp"
+              alt="Equipo de ingeniería JKO Asfaltos trabajando en obra de pavimentación"
               fill
               className="object-cover"
+              loading="lazy"
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              quality={75}
             />
             {/* Overlay badge with Industrial Blue */}
             <div className="absolute bottom-8 left-8 right-8 bg-background/40 backdrop-blur-xl border border-white/10 rounded-2xl p-8 shadow-2xl">

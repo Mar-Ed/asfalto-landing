@@ -106,7 +106,7 @@ export default function AsfaltoRC250Page() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/20 hover:border-primary transition-all duration-500 group">
               <Image
-                src="/asfaltos/ASFALTO_250.png"
+                src="/asfaltos/ASFALTO_250.webp"
                 alt="Asfalto Líquido RC-250"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -223,10 +223,10 @@ export default function AsfaltoRC250Page() {
             
             <div className="grid grid-cols-2 gap-4">
               <div className="aspect-[3/4] relative rounded-3xl overflow-hidden mt-12 bg-card">
-                <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS2.png" alt="JKO Asfalto" fill className="object-cover" />
+                <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS2.webp" alt="JKO Asfalto" fill className="object-cover" />
               </div>
               <div className="aspect-[3/4] relative rounded-3xl overflow-hidden bg-muted">
-                <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS3.png" alt="Calidad Premium" fill className="object-cover" />
+                <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS3.webp" alt="Calidad Premium" fill className="object-cover" />
               </div>
             </div>
           </div>

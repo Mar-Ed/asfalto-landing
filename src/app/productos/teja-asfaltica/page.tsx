@@ -106,7 +106,7 @@ export default function TejaAsfalticaPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/20 hover:border-primary transition-all duration-500 group">
               <Image
-                src="/asfaltos/teja_asfaltica.png"
+                src="/asfaltos/teja_asfaltica.webp"
                 alt="Teja Asfáltica 3mm JKO Asfalto"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -229,15 +229,15 @@ export default function TejaAsfalticaPage() {
                    <Image src="/TRABAJANDO_aSFALTO.jpg" alt="Obra Asfalto" fill className="object-cover transition-transform group-hover:scale-110 duration-700" />
                  </div>
                  <div className="aspect-square relative rounded-2xl overflow-hidden border border-primary/30">
-                    <Image src="/asfaltos/FONDOS_ASFALTOS/TEJA_FOTO_1.png" alt="Obra Teja" fill className="object-cover" />
+                    <Image src="/asfaltos/FONDOS_ASFALTOS/TEJA_FOTO_1.webp" alt="Obra Teja" fill className="object-cover" />
                  </div>
                </div>
                <div className="space-y-4 pt-12">
                  <div className="aspect-square relative rounded-2xl overflow-hidden shadow-2xl border border-primary/20">
-                   <Image src="/asfalto_hero1.png" alt="Obra Teja 2" fill className="object-cover" />
+                   <Image src="/asfalto_hero1.webp" alt="Obra Teja 2" fill className="object-cover" />
                  </div>
                  <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl border border-primary/20">
-                    <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS5.png" alt="Obra Teja 3" fill className="object-cover" />
+                    <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS5.webp" alt="Obra Teja 3" fill className="object-cover" />
                  </div>
                </div>
             </div>

@@ -16,15 +16,15 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'JKO Asfaltos | Venta de Asfalto, Brea y Mantos en Perú | Pavimentación en Lima',
-  description: 'JKO Asfaltos: Especialistas en Ingeniería Vial. Venta de Asfalto RC-250, Brea Líquida y Sólida, Mantos Asfálticos y Pavimentación Integral en Lima y todo el Perú. Calidad certificada MTC.',
-  keywords: 'JKO Asfaltos, venta de asfalto en Perú, brea líquida, brea sólida, mantos asfálticos, pavimentación Lima, asfalto RC-250, mezcla asfáltica, infraestructura vial, impermeabilización techos',
-  generator: 'JKO Asfaltos Dashboard',
+  title: 'JKO Asfaltos | Asfaltos Lima, Asfaltos Perú y Brea',
+  description: 'JKO Asfaltos: Especialistas en Asfaltos Lima y Asfaltos Perú. Venta de Asfaltos, Brea Líquida y Sólida, Mantos Asfálticos y Pavimentación Integral en todo el Perú.',
+  keywords: 'ASFALTOS LIMA, ASFALTOS PERU, ASFALTOS, BREA, JKO ASFALTOS, venta de asfalto en Perú, pavimentación Lima, asfalto RC-250, mezcla asfáltica, impermeabilización',
+  generator: 'JKO Asfaltos',
   openGraph: {
-    title: 'JKO Asfaltos | Ingeniería y Suministros de Asfalto en Perú',
-    description: 'Venta de asfalto, brea y soluciones de pavimentación con los más altos estándares de calidad (MTC). Atención a nivel nacional.',
+    title: 'JKO Asfaltos | Asfaltos y Brea en Lima y Perú',
+    description: 'Venta de asfaltos, brea y soluciones de pavimentación con los más altos estándares de calidad (MTC). Atención en Lima y a nivel nacional.',
     type: 'website',
-    url: 'https://jkoasfaltos.com', // Asumiendo el domino principal
+    url: 'https://jkoasfaltos.com',
     siteName: 'JKO Asfaltos',
     locale: 'es_PE',
   },

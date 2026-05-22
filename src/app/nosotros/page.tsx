@@ -51,7 +51,7 @@ export default function NosotrosPage() {
       <section className="relative h-[70vh] lg:h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image 
-            src="/asfalto_hero1.png"
+            src="/asfalto_hero1.webp"
             alt="Nosotros JKO Hero"
             fill
             className="object-cover object-center brightness-[0.25]"
@@ -112,7 +112,7 @@ export default function NosotrosPage() {
               className="relative aspect-[4/5] rounded-[3rem] overflow-hidden shadow-2xl shadow-primary/20 border border-white/10"
             >
               <Image 
-                src="/asphalt_workers_premium_1775080184201.png"
+                src="/asphalt_workers_premium_1775080184201.webp"
                 alt="Operarios JKO Asfatos"
                 fill
                 className="object-cover"

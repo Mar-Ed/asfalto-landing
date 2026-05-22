@@ -107,7 +107,7 @@ export default function AsfaltoMC30Page() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/20 hover:border-primary transition-all duration-500 group">
               <Image
-                src="/asfaltos/asfalto_mc30.png"
+                src="/asfaltos/asfalto_mc30.webp"
                 alt="Asfalto Líquido MC-30"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -226,10 +226,10 @@ export default function AsfaltoMC30Page() {
             
             <div className="grid grid-cols-2 gap-4">
               <div className="aspect-[3/4] relative rounded-3xl overflow-hidden shadow-2xl">
-                <Image src="/asphalt_workers_premium_1775080184201.png" alt="Obra MC-30 1" fill className="object-cover" />
+                <Image src="/asphalt_workers_premium_1775080184201.webp" alt="Obra MC-30 1" fill className="object-cover" />
               </div>
               <div className="aspect-[3/4] relative rounded-3xl overflow-hidden shadow-2xl mt-12">
-                <Image src="/asfalto_hero1.png" alt="Obra MC-30 2" fill className="object-cover" />
+                <Image src="/asfalto_hero1.webp" alt="Obra MC-30 2" fill className="object-cover" />
               </div>
             </div>
           </div>

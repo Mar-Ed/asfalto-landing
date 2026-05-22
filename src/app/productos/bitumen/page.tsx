@@ -106,7 +106,7 @@ export default function BitumenPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/20 hover:border-primary transition-all duration-500 group">
               <Image
-                src="/asfaltos/venta_bitumen.png"
+                src="/asfaltos/venta_bitumen.webp"
                 alt="Bitumen Puro JKO Asfalto"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -229,15 +229,15 @@ export default function BitumenPage() {
                    <Image src="/TRABAJANDO_aSFALTO.jpg" alt="Obra Asfalto" fill className="object-cover transition-transform group-hover:scale-110 duration-700" />
                  </div>
                  <div className="aspect-square relative rounded-2xl overflow-hidden border border-primary/30">
-                    <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS2.png" alt="Fondo Industrial" fill className="object-cover" />
+                    <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS2.webp" alt="Fondo Industrial" fill className="object-cover" />
                  </div>
                </div>
                <div className="space-y-4 pt-12">
                  <div className="aspect-square relative rounded-2xl overflow-hidden shadow-2xl border border-primary/20">
-                   <Image src="/asphalt_workers_premium_1775080184201.png" alt="Obra Bitumen 2" fill className="object-cover" />
+                   <Image src="/asphalt_workers_premium_1775080184201.webp" alt="Obra Bitumen 2" fill className="object-cover" />
                  </div>
                  <div className="aspect-[4/5] relative rounded-2xl overflow-hidden shadow-2xl border border-primary/20">
-                    <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS3.png" alt="Obra Bitumen 3" fill className="object-cover" />
+                    <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS3.webp" alt="Obra Bitumen 3" fill className="object-cover" />
                  </div>
                </div>
             </div>

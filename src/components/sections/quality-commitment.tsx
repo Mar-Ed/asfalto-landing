@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Headset, Users, Award, MoveRight } from "lucide-react"
@@ -60,9 +61,21 @@ export function QualityCommitment() {
     <section 
       id="certificaciones"
       ref={sectionRef} 
-      className="relative py-24 lg:py-40 bg-black overflow-hidden group bg-fixed bg-cover bg-center"
-      style={{ backgroundImage: "url('/TRABAJANDO_aSFALTO.jpg')" }}
+      className="relative py-24 lg:py-40 bg-black overflow-hidden"
     >
+      {/* Imagen de fondo optimizada con next/image (WebP autoático, lazy) */}
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="/TRABAJANDO_aSFALTO.webp"
+          alt=""
+          fill
+          className="object-cover object-center"
+          loading="lazy"
+          sizes="100vw"
+          quality={70}
+          aria-hidden="true"
+        />
+      </div>
       {/* Dark Overlay for Readability - Softened for better image visibility */}
       <div className="absolute inset-0 bg-black/30 z-0" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/10 to-transparent z-0" />

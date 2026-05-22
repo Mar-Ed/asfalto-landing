@@ -107,7 +107,7 @@ export default function AsfaltoPENPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-4 border-primary/20 hover:border-primary transition-all duration-500 group">
               <Image
-                src="/asfaltos/asfalto_pen.png"
+                src="/asfaltos/asfalto_pen.webp"
                 alt="Asfalto PEN"
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-110"
@@ -234,10 +234,10 @@ export default function AsfaltoPENPage() {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="relative aspect-square rounded-2xl overflow-hidden">
-                  <Image src="/asfalto_hero1.png" alt="Planta" fill className="object-cover" />
+                  <Image src="/asfalto_hero1.webp" alt="Planta" fill className="object-cover" />
                 </div>
                 <div className="relative aspect-square rounded-2xl overflow-hidden border-2 border-primary">
-                  <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS2.png" alt="Sello Calidad" fill className="object-cover" />
+                  <Image src="/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS2.webp" alt="Sello Calidad" fill className="object-cover" />
                 </div>
               </div>
             </div>

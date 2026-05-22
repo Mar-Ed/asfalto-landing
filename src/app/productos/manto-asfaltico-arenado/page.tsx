@@ -11,12 +11,12 @@ const arenadoData: MantoData = {
     title: "Manto Asfáltico",
     highlight: "Arenado",
     description: "Membrana prefabricada de alta ingeniería ideal para proyectos que exigen una impermeabilización robusta bajo acabados duros, con adherencia insuperable.",
-    bgImage: "/fondo_asfalto.png"
+    bgImage: "/fondo_asfalto.webp"
   },
   intro: {
     title: "Asfalto Modificado APP",
     text: "Compuestos por una selección especial de asfalto modificado con polímero APP (Polipropileno Atáctico) virgen. Esta formulación crea una barrera elástica, plástica y altamente durable ante las exigencias de la intemperie.",
-    image: "/manto_asfalto_arenado.png",
+    image: "/manto_asfalto_arenado.webp",
     note: "El acabado arenado proporciona la rugosidad necesaria para un anclaje perfecto con materiales de construcción posteriores, siendo excelente como capa única o primera membrana.",
     specs: "Presentación en rollos de 1m x 10m², núcleo de poliéster no tejido de 180g/m² y espesores de 2.7 mm a 4.0 mm. Con cara inferior de polietileno flameable para fusión térmica total."
   },
@@ -39,8 +39,8 @@ const arenadoData: MantoData = {
       "Infraestructura Urbana: Sistemas bicapa de impermeabilización puente."
     ],
     images: [
-      "/mantos/manto_imagen1.png",
-      "/mantos/manto_imagen2.png"
+      "/mantos/manto_imagen1.webp",
+      "/mantos/manto_imagen2.webp"
     ]
   }
 }

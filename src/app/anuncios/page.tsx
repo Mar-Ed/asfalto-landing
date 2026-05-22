@@ -21,7 +21,7 @@ const ANUNCIOS = [
     excerpt: "Con orgullo anunciamos la apertura de nuestra nueva planta de proceso asfáltico en Ica, que incrementará nuestra capacidad de respuesta.",
     date: "12 Abril, 2026",
     category: "Noticias",
-    image: "/quality_asphalt_premium_bg.png",
+    image: "/quality_asphalt_premium_bg.webp",
     featured: true,
     content: "Nuestra nueva sede en Ica representa un hito estratégico para JKO Asfaltos. Equipada con tecnología de última generación para la dosificación precisa de mezclas asfálticas en caliente, esta planta nos permite reducir los tiempos de entrega en toda la región sur del país. Con una capacidad de producción optimizada, estamos listos para abastecer proyectos de gran envergadura con la misma certificación de calidad que nos caracteriza."
   },
@@ -42,7 +42,7 @@ const ANUNCIOS = [
     excerpt: "Descubra cómo el asfalto protege, cohesiona y da flexibilidad a las estructuras viales modernas en todo el mundo.",
     date: "Técnico",
     category: "Ingeniería",
-    image: "/asphalt_workers_premium_1775080184201.png",
+    image: "/asphalt_workers_premium_1775080184201.webp",
     featured: false,
     icon: Layers,
     content: "El asfalto cumple diversas funciones críticas: actúa como impermeabilizante impidiendo que el agua dañe la base granular de las vías, proporciona una superficie de rodadura suave y silenciosa, y sirve como elemento cohesivo que mantiene unidos los agregados pétreos. Además, su inherente flexibilidad permite absorber las cargas de tráfico pesado y los movimientos sísmicos ligeros sin fracturarse inmediatamente, prolongando la vida útil de la infraestructura."
@@ -53,7 +53,7 @@ const ANUNCIOS = [
     excerpt: "Desde pavimentación urbana hasta impermeabilización industrial y techados residenciales de alta gama.",
     date: "Práctico",
     category: "Aplicaciones",
-    image: "/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS4.png",
+    image: "/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS4.webp",
     featured: false,
     icon: Settings,
     content: "La versatilidad del asfalto lo hace indispensable en múltiples industrias: 1. PAVIMENTACIÓN: Carreteras, aeropuertos y estacionamientos. 2. IMPERMEABILIZACIÓN: Techados en edificaciones (mantos y tejas), canales de riego y embalses. 3. PROTECCIÓN: Recubrimiento de tuberías metálicas para prevenir la corrosión en ambientes salinos. Su capacidad de sellado hermético es fundamental para la ingeniería civil global."
@@ -64,7 +64,7 @@ const ANUNCIOS = [
     excerpt: "Lanzamos nuestra nueva línea de asfaltos modificados con polímeros para soportar climas extremos sin fisuras.",
     date: "05 Marzo, 2026",
     category: "Innovación",
-    image: "/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS2.png",
+    image: "/asfaltos/FONDOS_ASFALTOS/ASFALTOS_FONDOS2.webp",
     featured: false,
     icon: Info,
     content: "Nuestros nuevos asfaltos modificados incorporan polímeros de alta resistencia que mejoran la elasticidad y el punto de ablandamiento de la mezcla. Esto permite que el asfalto se comporte de manera óptima tanto en el intenso calor de la costa como en el frío extremo de los Andes peruanos, evitando el agrietamiento térmico y el ahuellamiento por tráfico pesado."

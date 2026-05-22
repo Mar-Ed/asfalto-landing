@@ -113,7 +113,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-2 group">
             <div className="relative">
               <Image
-                src="/logo_oficial.png"
+                src="/logo_oficial.webp"
                 alt="JKO Asfaltos Logo"
                 width={160}
                 height={160}

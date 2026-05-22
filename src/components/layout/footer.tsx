@@ -52,7 +52,7 @@ export function Footer() {
             <Link href="/" className="group mb-8">
               <div className="relative">
                 <Image
-                  src="/logo_oficial.png"
+                  src="/logo_oficial.webp"
                   alt="JKO Asfaltos Logo"
                   width={160}
                   height={160}

@@ -11,12 +11,12 @@ const aluminizadoData: MantoData = {
     title: "Manto Asfáltico",
     highlight: "Aluminizado",
     description: "Membrana autoprotegida avanzada diseñada para proporcionar no solo una barrera hidráulica total, sino también un control térmico eficiente mediante reflexión solar.",
-    bgImage: "/fondo_asfalto.png"
+    bgImage: "/fondo_asfalto.webp"
   },
   intro: {
     title: "Protección Autoprotegida",
     text: "Mantos aluminizados elaborados con asfalto de penetración modificado con resinas especiales y polímeros SBS/APP. Su terminación exclusiva de lámina de aluminio gofrado actúa como un espejo técnico.",
-    image: "/manto_asfalto_aluminizado.png",
+    image: "/manto_asfalto_aluminizado.webp",
     note: "Diseñado como un sistema de capa única para permanecer expuesto a la intemperie total, manteniendo el confort térmico interior con un mantenimiento extremadamente simplificado.",
     specs: "Fusión térmica rápida con rollos de 1m x 10m², y un núcleo de refuerzo central. Lámina superior de aluminio de 40 micras para máxima protección térmica y espesores desde 3.0 mm a 4.0 mm."
   },
@@ -39,8 +39,8 @@ const aluminizadoData: MantoData = {
       "Sistemas pasivos de ahorro energético para estabilización interna de clima."
     ],
     images: [
-      "/mantos/manto_imagen1.png",
-      "/mantos/manto_imagen2.png"
+      "/mantos/manto_imagen1.webp",
+      "/mantos/manto_imagen2.webp"
     ]
   }
 }
