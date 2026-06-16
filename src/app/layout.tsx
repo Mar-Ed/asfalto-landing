@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     locale: 'es_PE',
   },
   icons: {
-    icon: '/logo_oficial.png',
-    apple: '/logo_oficial.png',
+    icon: '/logo_oficial.webp',
+    apple: '/logo_oficial.webp',
   },
 }
 
